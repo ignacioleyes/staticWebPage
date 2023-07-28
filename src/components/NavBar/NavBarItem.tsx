@@ -4,25 +4,18 @@ interface Props {
     label: string;
     to: string;
     isActive: boolean;
-    isDisabled?: boolean;
 }
 
-const NavbarItem = ({ label, to, isActive, isDisabled }: Props) => {
+const NavbarItem = ({ label, to, isActive }: Props) => {
     return (
         <Link
-            href={isDisabled ? "#" : to}
+            href={to}
             px={8}
-            color={isDisabled ? "gray" : "white"}
             borderBottomColor={"#ef810a"}
             borderBottomWidth={isActive ? 3 : 0}
             h={"full"}
-            cursor={isDisabled ? "not-allowed" : "pointer"}
+            cursor={"pointer"}
             textDecor={"none !important"}
-            title={
-                isDisabled
-                    ? "Not serving on current env. Check deploy.json"
-                    : ""
-            }
         >
             <VStack justifyContent={"center"} h={"full"}>
                 <Text
@@ -30,8 +23,7 @@ const NavbarItem = ({ label, to, isActive, isDisabled }: Props) => {
                     _hover={{
                         transform: "scale(1.09)",
                         fontWeight: "bold",
-                        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)"
-                        
+                        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
                     }}
                 >
                     {label}
