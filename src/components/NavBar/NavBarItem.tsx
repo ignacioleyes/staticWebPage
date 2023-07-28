@@ -19,8 +19,8 @@ const NavbarItem = ({ label, to, path }: Props) => {
                         fontWeight: "bold",
                         textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
                     }}
-                    fontWeight={location.pathname === path ? "bold" : "normal"}
-                    borderBottom={location.pathname === path ? "1px" : "unset"}
+                    fontWeight={location.pathname === path ? "bold" : "bold"}
+                    borderBottom={location.pathname === path ? "4px" : "unset"}
                     borderBottomColor={location.pathname === path ? "secondary" : "unset"}
                 >
                     {label}

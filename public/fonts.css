@@ -1,5 +1,4 @@
 @font-face {
-    font-family: 'Saira';
-    src: url('./saira') format('opentype');
-    /* Add more @font-face declarations for other Eurostile font styles and formats if available */
+    font-family: 'Objet-Regular';
+    src: url('./Objet-Regular.ttf') format('opentype');
   }
