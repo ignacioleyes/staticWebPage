@@ -1,7 +1,7 @@
 export const routes = [
     {
         label: "Empresa",
-        path: "/",
+        path: "/about",
     },
     {
         label: "Productos",

@@ -1,23 +1,17 @@
-import { Link, Text, VStack } from "@chakra-ui/react";
+import { Text, VStack } from "@chakra-ui/react";
+import { Link, useLocation } from "react-router-dom";
 
 interface Props {
     label: string;
     to: string;
-    isActive: boolean;
+    path: string;
 }
 
-const NavbarItem = ({ label, to, isActive }: Props) => {
+const NavbarItem = ({ label, to, path }: Props) => {
+    const location = useLocation();
     return (
-        <Link
-            href={to}
-            px={8}
-            borderBottomColor={"#ef810a"}
-            borderBottomWidth={isActive ? 3 : 0}
-            h={"full"}
-            cursor={"pointer"}
-            textDecor={"none !important"}
-        >
-            <VStack justifyContent={"center"} h={"full"}>
+        <Link to={to}>
+            <VStack justifyContent={"center"} h={"full"} p={8}>
                 <Text
                     fontSize={"1.3rem"}
                     _hover={{
@@ -25,6 +19,9 @@ const NavbarItem = ({ label, to, isActive }: Props) => {
                         fontWeight: "bold",
                         textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
                     }}
+                    fontWeight={location.pathname === path ? "bold" : "normal"}
+                    borderBottom={location.pathname === path ? "1px" : "unset"}
+                    borderBottomColor={location.pathname === path ? "secondary" : "unset"}
                 >
                     {label}
                 </Text>

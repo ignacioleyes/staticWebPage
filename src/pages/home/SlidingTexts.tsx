@@ -11,7 +11,7 @@ const SlidingTexts = () => {
   }
 `;
     return (
-        <HStack bg={"#FFC63E"}>
+        <HStack bg={"gray.300"}>
             <Center width="100%" height="15rem">
                 <VStack>
                     <Heading

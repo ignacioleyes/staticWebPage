@@ -31,9 +31,7 @@ const Navbar = () => {
                                 key={route.path}
                                 label={route.label}
                                 to={route.path}
-                                isActive={
-                                    window.location.pathname === route.path
-                                }
+                                path={route.path}
                             />
                         ))}
                     </HStack>
