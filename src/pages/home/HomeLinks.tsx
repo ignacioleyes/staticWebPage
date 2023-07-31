@@ -1,8 +1,10 @@
 import { Text, HStack, Flex } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const HomeLinks = () => {
     const navigate = useNavigate();
+    const [t] = useTranslation("global");
 
     const homeRedirect = (route: string) => {
         navigate(route);
@@ -31,7 +33,7 @@ const HomeLinks = () => {
                         fontSize={"1.5rem"}
                         textShadow={"1px 1px 4px white"}
                     >
-                        Conocé nuestros productos
+                        {t("homeLinks.firstLink")}
                     </Text>
                 </Flex>
                 <Flex
@@ -55,7 +57,7 @@ const HomeLinks = () => {
                         fontSize={"1.5rem"}
                         textShadow={"1px 1px 4px white"}
                     >
-                        ¿Tenés un proyecto?
+                        {t("homeLinks.secondLink")}
                     </Text>
                 </Flex>
                 <Flex
@@ -79,7 +81,7 @@ const HomeLinks = () => {
                         fontSize={"1.5rem"}
                         textShadow={"1px 1px 4px white"}
                     >
-                        Conocé nuestra trayectoria
+                        {t("homeLinks.thirdLink")}
                     </Text>
                 </Flex>
             </Flex>

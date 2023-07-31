@@ -3,5 +3,19 @@
         "company": "Empresa",
         "products": "Productos",
         "contact": "Contacto"
+    },
+    "fadingTexts": {
+        "title": "CONDUCTORES ELÉCTRICOS",
+        "fading1": "Más de 20 años de trayectoria avalan nuestra experiencia",
+        "fading2": "Productos de la más alta calidad, fabricados en conformidad con las normas de seguridad",
+        "fading3": "Servicios personalizados a medida"
+    },
+    "homeLinks": {
+        "firstLink": "Conocé nuestros productos",
+        "secondLink": "¿Tenés un proyecto?",
+        "thirdLink": "Conocé nuestra trayectoria"
+    },
+    "footer": {
+        "address": "Angel Pini 4980, (1678) Caseros, 3 de Febrero. Buenos Aires, Argentina. | Derechos Reservados © 2020"
     }
 }

@@ -1,7 +1,9 @@
 import { HStack, Image, Box, Divider, Text, VStack } from "@chakra-ui/react";
 import Logo from "../../assets/images/logo-medio.png";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+    const [t] = useTranslation("global");
     return (
         <Box w={"full"} h={"6rem"} bg={"#CCD9E2"} mt={3}>
             <VStack
@@ -19,10 +21,7 @@ const Footer = () => {
                     borderColor={"whitesmoke"}
                 />
                 <HStack>
-                    <Text>
-                        Angel Pini 4980, (1678) Caseros, 3 de Febrero. Buenos
-                        Aires, Argentina. | Derechos Reservados © 2020
-                    </Text>
+                    <Text>{t("footer.address")}</Text>
                 </HStack>
             </VStack>
         </Box>

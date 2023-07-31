@@ -1,7 +1,9 @@
 import { VStack, HStack, Text, Heading } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
+import { useTranslation } from "react-i18next";
 
 const FadingTexts = () => {
+    const [t] = useTranslation("global");
     const fadeAnimation = keyframes`
   0%, 100% {
     opacity: 0;
@@ -19,7 +21,7 @@ const FadingTexts = () => {
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 1)"}
                     p={5}
                 >
-                    CONDUCTORES ELÉCTRICOS
+                    {t("fadingTexts.title")}
                 </Heading>
                 <Text
                     color={"tertiary"}
@@ -27,7 +29,7 @@ const FadingTexts = () => {
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 0.3)"}
                     animation={`${fadeAnimation} 6s ease infinite`}
                 >
-                    Más de 20 años de trayectoria avalan nuestra experiencia
+                    {t("fadingTexts.fading1")}
                 </Text>
 
                 <Text
@@ -36,8 +38,7 @@ const FadingTexts = () => {
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 0.1)"}
                     animation={`${fadeAnimation} 6s ease infinite 2s`}
                 >
-                    Productos de la más alta calidad, fabricados en conformidad
-                    con las normas de seguridad
+                    {t("fadingTexts.fading2")}
                 </Text>
 
                 <Text
@@ -46,7 +47,7 @@ const FadingTexts = () => {
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 0.1)"}
                     animation={`${fadeAnimation} 6s ease infinite 3s`}
                 >
-                    Servicios personalizados a medida
+                    {t("fadingTexts.fading3")}
                 </Text>
             </VStack>
         </HStack>

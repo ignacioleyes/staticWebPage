@@ -3,5 +3,19 @@
         "company": "Company",
         "products": "Products",
         "contact": "Contact"
+    },
+    "fadingTexts": {
+        "title": "ELECTRICAL CONDUCTORS",
+        "fading1": "More than 20 years of history behind us endorse our work",
+        "fading2": "The highest quality produts, manufactured in compliance with the safety standards",
+        "fading3": "Customized services tailored to your needs"
+    },
+    "homeLinks": {
+        "firstLink": "Discover our products",
+        "secondLink": "Do you have a project?",
+        "thirdLink": "Discover our history"
+    },
+    "footer": {
+        "address": "Angel Pini 4980, (1678) Caseros, 3 de Febrero. Buenos Aires, Argentina. | All Rights Reserved © 2020"
     }
 }
