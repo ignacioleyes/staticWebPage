@@ -1,6 +1,8 @@
-import { Box, HStack, Hide, Link, Image, Button } from "@chakra-ui/react";
+import { Box, HStack, Hide, Link, Image } from "@chakra-ui/react";
 import NavbarItem from "./NavBarItem";
 import Logo from "../../assets/images/logoConduflex.png";
+import USAFLAG from "../../assets/images/usa-flag.png";
+import ARGFLAG from "../../assets/images/argentina-flag.png";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
@@ -51,12 +53,28 @@ const Navbar = () => {
                         ))}
                     </HStack>
                     <HStack>
-                        <Button onClick={() => i18n.changeLanguage("es")}>
-                            ES
-                        </Button>
-                        <Button onClick={() => i18n.changeLanguage("en")}>
-                            EN
-                        </Button>
+                        <Box
+                            maxW={"3.5rem"}
+                            height={"2.1rem"}
+                            _hover={{
+                                cursor: "pointer",
+                                transform: "scale(1.09)",
+                            }}
+                            onClick={() => i18n.changeLanguage("es")}
+                        >
+                            <Image src={ARGFLAG} alt={"usa"} h={"full"} />
+                        </Box>
+                        <Box
+                            maxW={"3.5rem"}
+                            height={"2rem"}
+                            _hover={{
+                                cursor: "pointer",
+                                transform: "scale(1.09)",
+                            }}
+                            onClick={() => i18n.changeLanguage("en")}
+                        >
+                            <Image src={USAFLAG} alt={"arg"} h={"full"} />
+                        </Box>
                     </HStack>
                 </Hide>
             </HStack>
