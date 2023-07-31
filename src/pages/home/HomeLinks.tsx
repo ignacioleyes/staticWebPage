@@ -1,20 +1,17 @@
-import { VStack, Text, HStack, Flex } from "@chakra-ui/react";
-import {useNavigate} from "react-router-dom"
+import { Text, HStack, Flex } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const HomeLinks = () => {
     const navigate = useNavigate();
 
     const homeRedirect = (route: string) => {
         navigate(route);
-    }
+    };
     return (
         <HStack width={"100%"} height={"15rem"}>
-            <VStack
-                width={"33%"}
-                justifyContent={"center"}
-            >
+            <Flex justifyContent={"space-evenly"} width={"100%"}>
                 <Flex
-                    bg={"#5A8100"}
+                    bgGradient={"linear(to right, #808182, #5A8100)"}
                     borderTopLeftRadius={"50%"}
                     borderTopRightRadius={"10%"}
                     borderBottomRightRadius={"50%"}
@@ -26,17 +23,19 @@ const HomeLinks = () => {
                     flexDir={"column"}
                     cursor={"pointer"}
                     onClick={() => homeRedirect("/products")}
-                    _hover={{boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)"}}
+                    _hover={{ boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)" }}
                 >
-                    <Text textAlign={"center"}>Conocé nuestros productos</Text>
+                    <Text
+                        textAlign={"center"}
+                        fontWeight={"bold"}
+                        fontSize={"1.5rem"}
+                        textShadow={"1px 1px 4px white"}
+                    >
+                        Conocé nuestros productos
+                    </Text>
                 </Flex>
-            </VStack>
-            <VStack
-                width={"33%"}
-                justifyContent={"center"}
-            >
                 <Flex
-                    bg={"#FFB400"}
+                    bgGradient={"linear(to right, #808182, #FFB400)"}
                     borderTopLeftRadius={"50%"}
                     borderTopRightRadius={"10%"}
                     borderBottomRightRadius={"50%"}
@@ -48,17 +47,19 @@ const HomeLinks = () => {
                     flexDir={"column"}
                     cursor={"pointer"}
                     onClick={() => homeRedirect("/contact")}
-                    _hover={{boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)"}}
+                    _hover={{ boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)" }}
                 >
-                    <Text textAlign={"center"}>¿Tenés un proyecto?</Text>
+                    <Text
+                        textAlign={"center"}
+                        fontWeight={"bold"}
+                        fontSize={"1.5rem"}
+                        textShadow={"1px 1px 4px white"}
+                    >
+                        ¿Tenés un proyecto?
+                    </Text>
                 </Flex>
-            </VStack>
-            <VStack
-                width={"33%"}
-                justifyContent={"center"}
-            >
                 <Flex
-                    bg={"#FF6C02"}
+                    bgGradient={"linear(to right, #808182, #FF6C02)"}
                     borderTopLeftRadius={"50%"}
                     borderTopRightRadius={"10%"}
                     borderBottomRightRadius={"50%"}
@@ -70,11 +71,18 @@ const HomeLinks = () => {
                     flexDir={"column"}
                     cursor={"pointer"}
                     onClick={() => homeRedirect("/about")}
-                    _hover={{boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)"}}
+                    _hover={{ boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)" }}
                 >
-                    <Text textAlign={"center"}>Conocé nuestra trayectoria</Text>
+                    <Text
+                        textAlign={"center"}
+                        fontWeight={"bold"}
+                        fontSize={"1.5rem"}
+                        textShadow={"1px 1px 4px white"}
+                    >
+                        Conocé nuestra trayectoria
+                    </Text>
                 </Flex>
-            </VStack>
+            </Flex>
         </HStack>
     );
 };

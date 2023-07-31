@@ -1,10 +1,25 @@
-import { Box, HStack, Hide, Link, Image } from "@chakra-ui/react";
-import { routes } from "../../config/routes";
+import { Box, HStack, Hide, Link, Image, Button } from "@chakra-ui/react";
 import NavbarItem from "./NavBarItem";
 import Logo from "../../assets/images/logoConduflex.png";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
-    const navRoutes = routes;
+    const [t, i18n] = useTranslation("global");
+
+    const routes = [
+        {
+            label: `${t("navbar.company")}`,
+            path: "/about",
+        },
+        {
+            label: `${t("navbar.products")}`,
+            path: "/products",
+        },
+        {
+            label: `${t("navbar.contact")}`,
+            path: "/contact",
+        },
+    ];
     return (
         <Box
             w={"full"}
@@ -26,7 +41,7 @@ const Navbar = () => {
                 </HStack>
                 <Hide below="md">
                     <HStack h={"full"}>
-                        {navRoutes.map((route) => (
+                        {routes.map((route) => (
                             <NavbarItem
                                 key={route.path}
                                 label={route.label}
@@ -34,6 +49,14 @@ const Navbar = () => {
                                 path={route.path}
                             />
                         ))}
+                    </HStack>
+                    <HStack>
+                        <Button onClick={() => i18n.changeLanguage("es")}>
+                            ES
+                        </Button>
+                        <Button onClick={() => i18n.changeLanguage("en")}>
+                            EN
+                        </Button>
                     </HStack>
                 </Hide>
             </HStack>

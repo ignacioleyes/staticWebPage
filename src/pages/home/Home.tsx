@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import Carousel from "./Carousel";
 import HomeLinks from "./HomeLinks";
 import FadingTexts from "./FadingTexts";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Carousel />
             <FadingTexts />
             <HomeLinks />
+            <Footer />
         </Box>
     );
 };

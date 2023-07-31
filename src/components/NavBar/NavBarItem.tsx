@@ -1,6 +1,7 @@
 import { Text, VStack } from "@chakra-ui/react";
 import { Link, useLocation } from "react-router-dom";
 
+
 interface Props {
     label: string;
     to: string;
