@@ -7,7 +7,7 @@
     "fadingTexts": {
         "title": "ELECTRICAL CONDUCTORS",
         "fading1": "More than 20 years of history behind us endorse our work",
-        "fading2": "The highest quality produts, manufactured in compliance with the safety standards",
+        "fading2": "The highest quality products, manufactured in compliance with the safety standards",
         "fading3": "Customized services tailored to your needs"
     },
     "homeLinks": {
@@ -17,5 +17,14 @@
     },
     "footer": {
         "address": "Angel Pini 4980, (1678) Caseros, 3 de Febrero. Buenos Aires, Argentina. | All Rights Reserved © 2020"
+    },
+    "about": {
+        "visionTitle": "Our Vision",
+        "visionDescription": "To be a benchmark of quality in the manufacturing of electrical and special conductors, always committed to excellence and the service we provide to our customers.",
+        "philosophyTitle": "Our Philosophy",
+        "philosophyDescription": "Putting human values first, at Conduflex, we don't aim to be simple suppliers. We want to be your strategic and trustworthy allies, providing the solution you need, when you need it.",
+        "policyTitle": "Our Policy",
+        "policyDescription": "Achieving the results and satisfying the needs of our customers, working together with them in a space of respect and constant commitment.",
+        "history": "Starting with a highly qualified technical and commercial team, Conduflex S.A. was founded in 2003. Since its inception, the company has been actively committed to customer-oriented development, seeking to meet market needs with high-quality products at competitive prices. Over time, and thanks to the trust our customers placed in us, we ventured into new challenges, allowing us to become suppliers of electrical conduits solutions for various industries with diverse requirements. Today, more than ever, at Conduflex, we strive to be your trusted ally for the growth of your business."
     }
 }

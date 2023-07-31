@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import Products from "./pages/products/Products";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                     <Route path={"/contact"} element={<Contact />} />
                 </Routes>
             </Box>
+            <Footer />
         </VStack>
     );
 };

@@ -17,5 +17,14 @@
     },
     "footer": {
         "address": "Angel Pini 4980, (1678) Caseros, 3 de Febrero. Buenos Aires, Argentina. | Derechos Reservados © 2020"
+    },
+    "about": {
+        "visionTitle": "Nuestra Visión",
+        "visionDescription": "Ser referentes de calidad en la fabricación de conductores eléctricos y especiales, comprometidos siempre con la excelencia y el trato que brindamos anuestros clientes.",
+        "philosophyTitle": "Nuestra Filosofía",
+        "philosophyDescription": "Poniendo los valores humanos por delante, en Conduflex no buscamos ser simples porveedores. Queremos ser su aliados estratégicos y de confianza, brindando la solución que necesite y cuando la necesite.",
+        "policyTitle": "Nuestra Política",
+        "policyDescription": "Lograr los resultados y satisfacer la necesidad de nuestros clientes, trabajando en equipo con ellos en un espacio de respeto y compromiso constante.",
+        "history": "A partir de un equipo técnico y comercial altamente calificado nace en el año 2003 Conduflex S.A. Desde sus inicios la empresa se dedicó a desarrollarse en forma activa en orientación al cliente, buscando satisfacer las necesidades del mercado con productos de primera calidad y a precio competitivo. El tiempo y la confianza que depositaron en nosotros nuestros clientes, nos llevo por nuevos desafíos, permitiéndonos ser también proveedores de soluciones en materia de conducción eléctrica, para diversas industrias bajo diversos requerimientos. Hoy, más afianzados que nunca, en Conduflex buscamos ser su aliado de confianza para el crecimiento de su negocio."
     }
 }

@@ -11,7 +11,7 @@ const HomeLinks = () => {
     };
     return (
         <HStack width={"100%"} height={"15rem"}>
-            <Flex justifyContent={"space-evenly"} width={"100%"}>
+            <Flex justifyContent={"space-evenly"} width={"100%"} mb={5}>
                 <Flex
                     bgGradient={"linear(to right, #808182, #5A8100)"}
                     borderTopLeftRadius={"50%"}
