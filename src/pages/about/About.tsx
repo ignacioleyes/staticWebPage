@@ -12,7 +12,7 @@ const About = () => {
         >
             <VStack
                 width={"50%"}
-                height={"full"}
+                height={"80vh"}
                 justifyContent={"center"}
                 alignItems={"center"}
             >
@@ -22,7 +22,7 @@ const About = () => {
                     </Text>
                 </Box>
             </VStack>
-            <VStack width={"50%"} height={"full"}>
+            <VStack width={"50%"} height={"80vh"} justifyContent={"center"}>
                 <VStack
                     bgGradient={"linear(to right, #808182, #E1DCD9, #808182)"}
                     borderRadius={"2rem"}
