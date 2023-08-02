@@ -39,6 +39,7 @@ const Navbar = () => {
                 h={"full"}
                 py={2}
                 justifyContent={{
+                    base: "space-between",
                     sm: "space-between",
                     md: "space-around",
                     lg: "space-around",
