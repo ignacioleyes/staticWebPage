@@ -1,4 +1,4 @@
-import { VStack, HStack, Text } from "@chakra-ui/react";
+import { VStack, HStack, Text, Heading } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -25,18 +25,21 @@ const FadingTexts = () => {
     }, [currentMessageIndex, t]);
 
     return (
-        <HStack
-            justifyContent={"center"}
-            height="25rem"
-            width="100%"
-            position={"absolute"}
-            top={10}
-        >
+        <HStack justifyContent={"center"} height="25rem" width="100%">
             <VStack>
+                <Heading
+                    size={{ base:"lg", sm:"lg", md:"lg", lg:"2xl", xl:"3xl" }}
+                    color={"secondary"}
+                    textShadow={"2px 2px 4px rgba(0, 0, 0, 0.4)"}
+                    p={5}
+                    textAlign={"center"}
+                >
+                    {t("fadingTexts.title")}
+                </Heading>
                 <Text
-                    color={"whitesmoke"}
-                    fontSize={{ sm: "0.9rem", md: "1.5rem", lg: "3rem" }}
-                    textShadow={"2px 2px 4px rgba(0, 0, 0, 0.3)"}
+                    color={"primary"}
+                    fontSize={{ base:"lg", sm:"lg", md:"lg", lg:"2xl", xl:"3xl" }}
+                    textShadow={"2px 2px 4px rgba(0, 0, 0, 0.1)"}
                     textAlign={"center"}
                 >
                     {message}
