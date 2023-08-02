@@ -17,7 +17,16 @@ const About = () => {
                 alignItems={"center"}
             >
                 <Box width={"50%"}>
-                    <Text color={"secondary"} fontWeight={"bold"}>
+                    <Text
+                        color={"secondary"}
+                        fontWeight={"bold"}
+                        fontSize={{
+                            sm: "0.7rem",
+                            md: "0.8rem",
+                            lg: "1rem",
+                            xl: "1.2rem",
+                        }}
+                    >
                         {t("about.history")}
                     </Text>
                 </Box>
@@ -33,14 +42,14 @@ const About = () => {
                     <Text
                         color={"whitesmoke"}
                         textShadow={"1px 1px 4px black"}
-                        fontSize={"2rem"}
+                        fontSize={{ sm:"0.7rem", md:"1.2rem", lg:"1.5rem" }}
                     >
                         {t("about.visionTitle")}
                     </Text>
                     <Text
                         textAlign={"center"}
                         fontWeight={"bold"}
-                        fontSize={"1rem"}
+                        fontSize={{ sm: "0.6rem", md: "0.8rem", lg: "1rem" }}
                         textShadow={"1px 1px 4px white"}
                     >
                         {t("about.visionDescription")}
@@ -56,14 +65,14 @@ const About = () => {
                     <Text
                         color={"whitesmoke"}
                         textShadow={"1px 1px 4px black"}
-                        fontSize={"2rem"}
+                        fontSize={{ sm: "0.7rem", md: "1.2rem", lg: "1.5rem" }}
                     >
                         {t("about.philosophyTitle")}
                     </Text>
                     <Text
                         textAlign={"center"}
                         fontWeight={"bold"}
-                        fontSize={"1rem"}
+                        fontSize={{ sm: "0.6rem", md: "0.8rem", lg:"1rem" }}
                         textShadow={"1px 1px 4px white"}
                     >
                         {t("about.philosophyDescription")}
@@ -80,14 +89,14 @@ const About = () => {
                     <Text
                         color={"whitesmoke"}
                         textShadow={"1px 1px 4px black"}
-                        fontSize={"2rem"}
+                        fontSize={{ sm: "0.7rem", md: "1.2rem", lg:"1.5rem" }}
                     >
                         {t("about.policyTitle")}
                     </Text>
                     <Text
                         textAlign={"center"}
                         fontWeight={"bold"}
-                        fontSize={"1rem"}
+                        fontSize={{ sm: "0.6rem", md: "0.8rem", lg:"1rem" }}
                         textShadow={"1px 1px 4px white"}
                     >
                         {t("about.policyDescription")}
