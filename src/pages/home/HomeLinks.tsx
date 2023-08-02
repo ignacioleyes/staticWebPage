@@ -18,8 +18,8 @@ const HomeLinks = () => {
                     borderTopRightRadius={"10%"}
                     borderBottomRightRadius={"50%"}
                     borderBottomLeftRadius={"10%"}
-                    width={"15rem"}
-                    height={"15rem"}
+                    width={{ sm: "12rem", md: "15rem", lg: "15rem" }}
+                    height={{ sm: "12rem", md: "15rem", lg: "15rem" }}
                     justifyContent={"center"}
                     alignItems={"center"}
                     flexDir={"column"}
@@ -30,7 +30,7 @@ const HomeLinks = () => {
                     <Text
                         textAlign={"center"}
                         fontWeight={"bold"}
-                        fontSize={"1.5rem"}
+                        fontSize={{ sm: "1rem", md: "1.5rem", lg: "1.5rem" }}
                         textShadow={"1px 1px 4px white"}
                     >
                         {t("homeLinks.firstLink")}
@@ -42,8 +42,8 @@ const HomeLinks = () => {
                     borderTopRightRadius={"10%"}
                     borderBottomRightRadius={"50%"}
                     borderBottomLeftRadius={"10%"}
-                    width={"15rem"}
-                    height={"15rem"}
+                    width={{ sm: "12rem", md: "15rem", lg: "15rem" }}
+                    height={{ sm: "12rem", md: "15rem", lg: "15rem" }}
                     justifyContent={"center"}
                     alignItems={"center"}
                     flexDir={"column"}
@@ -54,7 +54,7 @@ const HomeLinks = () => {
                     <Text
                         textAlign={"center"}
                         fontWeight={"bold"}
-                        fontSize={"1.5rem"}
+                        fontSize={{ sm: "1rem", md: "1.5rem", lg: "1.5rem" }}
                         textShadow={"1px 1px 4px white"}
                     >
                         {t("homeLinks.secondLink")}
@@ -66,8 +66,8 @@ const HomeLinks = () => {
                     borderTopRightRadius={"10%"}
                     borderBottomRightRadius={"50%"}
                     borderBottomLeftRadius={"10%"}
-                    width={"15rem"}
-                    height={"15rem"}
+                    width={{ sm: "12rem", md: "15rem", lg: "15rem" }}
+                    height={{ sm: "12rem", md: "15rem", lg: "15rem" }}
                     justifyContent={"center"}
                     alignItems={"center"}
                     flexDir={"column"}
@@ -78,7 +78,7 @@ const HomeLinks = () => {
                     <Text
                         textAlign={"center"}
                         fontWeight={"bold"}
-                        fontSize={"1.5rem"}
+                        fontSize={{ sm: "1rem", md: "1.5rem", lg: "1.5rem" }}
                         textShadow={"1px 1px 4px white"}
                     >
                         {t("homeLinks.thirdLink")}

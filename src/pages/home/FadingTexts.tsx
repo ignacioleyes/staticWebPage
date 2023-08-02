@@ -16,7 +16,7 @@ const FadingTexts = () => {
         <HStack justifyContent={"center"} height="25rem" width="100%">
             <VStack>
                 <Heading
-                    size={"3xl"}
+                    size={{sm: "lg", md: "2xl", lg: "3xl"}}
                     color={"secondary"}
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 1)"}
                     p={5}
@@ -25,7 +25,7 @@ const FadingTexts = () => {
                 </Heading>
                 <Text
                     color={"tertiary"}
-                    fontSize={"1.7rem"}
+                    fontSize={{sm: "0.9rem", md: "1.5rem", lg: "1.7rem"}}
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 0.3)"}
                     animation={`${fadeAnimation} 6s ease infinite`}
                 >
@@ -34,7 +34,7 @@ const FadingTexts = () => {
 
                 <Text
                     color={"tertiary"}
-                    fontSize={"1.6rem"}
+                    fontSize={{sm: "0.7rem", md: "1.5rem", lg: "1.7rem"}}
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 0.1)"}
                     animation={`${fadeAnimation} 6s ease infinite 2s`}
                 >
@@ -43,7 +43,7 @@ const FadingTexts = () => {
 
                 <Text
                     color={"tertiary"}
-                    fontSize={"1.5rem"}
+                    fontSize={{sm: "0.8rem", md: "1.5rem", lg: "1.7rem"}}
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 0.1)"}
                     animation={`${fadeAnimation} 6s ease infinite 3s`}
                 >

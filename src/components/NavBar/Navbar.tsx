@@ -1,12 +1,16 @@
-import { Box, HStack, Hide, Link, Image } from "@chakra-ui/react";
+import { Box, HStack, Hide, Link, Image, Icon, Show } from "@chakra-ui/react";
 import NavbarItem from "./NavBarItem";
 import Logo from "../../assets/images/logoConduflex.png";
 import USAFLAG from "../../assets/images/usa-flag.png";
 import ARGFLAG from "../../assets/images/argentina-flag.png";
 import { useTranslation } from "react-i18next";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { useState } from "react";
+import SidebarHamburgerMenu from "./SidebarHamburgerMenu";
 
 const Navbar = () => {
     const [t, i18n] = useTranslation("global");
+    const [isOpen, setIsOpen] = useState(false)
 
     const routes = [
         {
@@ -22,6 +26,7 @@ const Navbar = () => {
             path: "/contact",
         },
     ];
+    
     return (
         <Box
             w={"full"}
@@ -77,6 +82,12 @@ const Navbar = () => {
                         </Box>
                     </HStack>
                 </Hide>
+                <Show below="md">
+                    <Icon as={RxHamburgerMenu} color={"whitesmoke"} onClick={() => setIsOpen(true)}/>
+                </Show>
+                {isOpen && (
+                    <SidebarHamburgerMenu setIsOpen={setIsOpen} />
+                )}
             </HStack>
         </Box>
     );
