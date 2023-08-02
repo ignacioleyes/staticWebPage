@@ -15,6 +15,10 @@ const SidebarHamburgerMenu = ({ setIsOpen }: Props) => {
 
     const NAV_ITEMS = [
         {
+            label: `${t("navbar.main")}`,
+            path: "/",
+        },
+        {
             label: `${t("navbar.company")}`,
             path: "/about",
         },

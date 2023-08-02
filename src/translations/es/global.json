@@ -1,5 +1,6 @@
 {
     "navbar": {
+        "main": "Inicio",
         "company": "Empresa",
         "products": "Productos",
         "contact": "Contacto"

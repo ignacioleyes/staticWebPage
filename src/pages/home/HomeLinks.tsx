@@ -10,7 +10,7 @@ const HomeLinks = () => {
         navigate(route);
     };
     return (
-        <HStack width={"100%"} height={"15rem"}>
+        <HStack width={"100%"} height={"15rem"} mt={5}>
             <Flex justifyContent={"space-evenly"} width={"100%"} mb={5}>
                 <Flex
                     bgGradient={"linear(to right, #808182, #5A8100)"}

@@ -1,5 +1,6 @@
 {
     "navbar": {
+        "main": "Home",
         "company": "Company",
         "products": "Products",
         "contact": "Contact"
