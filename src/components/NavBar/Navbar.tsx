@@ -10,7 +10,7 @@ import SidebarHamburgerMenu from "./SidebarHamburgerMenu";
 
 const Navbar = () => {
     const [t, i18n] = useTranslation("global");
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
 
     const routes = [
         {
@@ -26,7 +26,7 @@ const Navbar = () => {
             path: "/contact",
         },
     ];
-    
+
     return (
         <Box
             w={"full"}
@@ -38,7 +38,11 @@ const Navbar = () => {
                 w={"full"}
                 h={"full"}
                 py={2}
-                justifyContent={"space-around"}
+                justifyContent={{
+                    sm: "space-between",
+                    md: "space-around",
+                    lg: "space-around",
+                }}
                 alignItems={"center"}
             >
                 <HStack spacing={5} h="full" alignItems={"center"}>
@@ -83,11 +87,16 @@ const Navbar = () => {
                     </HStack>
                 </Hide>
                 <Show below="md">
-                    <Icon as={RxHamburgerMenu} color={"whitesmoke"} onClick={() => setIsOpen(true)}/>
+                    <Icon
+                        boxSize={6}
+                        as={RxHamburgerMenu}
+                        color={"whitesmoke"}
+                        onClick={() => setIsOpen(true)}
+                        _hover={{ transform: "scale(1.1)", cursor: "pointer" }}
+                        m={3}
+                    />
                 </Show>
-                {isOpen && (
-                    <SidebarHamburgerMenu setIsOpen={setIsOpen} />
-                )}
+                {isOpen && <SidebarHamburgerMenu setIsOpen={setIsOpen} />}
             </HStack>
         </Box>
     );
