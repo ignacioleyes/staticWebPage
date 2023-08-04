@@ -5,7 +5,7 @@ import FadingTexts from "./FadingTexts";
 
 const Home = () => {
     return (
-        <Box bg={"#FFF9E9"}>
+        <Box>
             <Carousel />
             <FadingTexts />
             <HomeLinks />

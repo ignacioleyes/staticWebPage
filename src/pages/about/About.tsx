@@ -33,7 +33,7 @@ const About = () => {
         },
     ];
     return (
-        <VStack height={"80vh"} spacing={0} bg={"whitesmoke"} mb={5}>
+        <VStack height={"80vh"} spacing={0} mb={5}>
             <HStack
                 width={"80%"}
                 height={"100%"}
@@ -66,7 +66,7 @@ const About = () => {
                 {companyInfo.map((el, idx) => (
                     <VStack
                         key={idx}
-                        bgColor={"white"}
+                        bgColor={"whitesmoke"}
                         width={"full"}
                         height={"15rem"}
                         borderRadius={"1rem"}

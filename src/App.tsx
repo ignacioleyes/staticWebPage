@@ -11,7 +11,7 @@ const App = () => {
     return (
         <VStack w={"full"} minH={"100vh"} spacing={0}>
             <Navbar />
-            <Box w={"full"} flex={1} bgColor={"whitesmoke"}>
+            <Box w={"full"} flex={1} bgColor={"#FFF9E9"}>
                 <Routes>
                     <Route path={"/"} element={<Home />} />
                     <Route path={"/about"} element={<About />} />
