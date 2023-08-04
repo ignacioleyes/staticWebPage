@@ -5,7 +5,12 @@ import { useTranslation } from "react-i18next";
 const Footer = () => {
     const [t] = useTranslation("global");
     return (
-        <Box w={"full"} h={"12rem"} bg={"#CCD9E2"}>
+        <Box
+            w={"full"}
+            h={"15vh"}
+            bg={"#CCD9E2"}
+      
+        >
             <VStack
                 w={"full"}
                 h={"100%"}

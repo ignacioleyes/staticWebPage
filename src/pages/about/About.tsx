@@ -1,24 +1,49 @@
-import { VStack, HStack, Box, Text } from "@chakra-ui/react";
+import {
+    VStack,
+    Box,
+    Text,
+    HStack,
+    Avatar,
+    Heading,
+    Divider,
+} from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import MissionIcon from "../../assets/images/missionIcon.png";
+import PhilosofyIcon from "../../assets/images/philosophyIcon.png";
+import PolicyIcon from "../../assets/images/policyIcon.png";
 
 const About = () => {
     const [t] = useTranslation("global");
+
+    const companyInfo = [
+        {
+            title: `${t("about.visionTitle")}`,
+            description: `${t("about.visionDescription")}`,
+            icon: MissionIcon,
+        },
+        {
+            title: `${t("about.philosophyTitle")}`,
+            description: `${t("about.philosophyDescription")}`,
+            icon: PhilosofyIcon,
+        },
+        {
+            title: `${t("about.policyTitle")}`,
+            description: `${t("about.policyDescription")}`,
+            icon: PolicyIcon,
+        },
+    ];
     return (
-        <HStack
-            height={"100%"}
-            spacing={0}
-            bgImage={"url('/companyBG.jpeg')"}
-            bgSize={"cover"}
-        >
-            <VStack
-                width={"50%"}
-                height={"80vh"}
+        <VStack height={"80vh"} spacing={0} bg={"whitesmoke"} mb={5}>
+            <HStack
+                width={"80%"}
+                height={"100%"}
                 justifyContent={"center"}
                 alignItems={"center"}
             >
-                <Box width={"50%"}>
+                <Box width={"100%"}>
                     <Text
                         color={"secondary"}
+                        textAlign={"justify"}
                         fontWeight={"bold"}
                         fontSize={{
                             base: "0.6rem",
@@ -31,80 +56,73 @@ const About = () => {
                         {t("about.history")}
                     </Text>
                 </Box>
-            </VStack>
-            <VStack width={"50%"} height={"80vh"} justifyContent={"center"}>
-                <VStack
-                    bgGradient={"linear(to right, #808182, #E1DCD9, #808182)"}
-                    borderRadius={"2rem"}
-                    width={"50%"}
-                    height={"12rem"}
-                    alignItems={"center"}
-                >
-                    <Text
-                        color={"whitesmoke"}
-                        textShadow={"1px 1px 4px black"}
-                        fontSize={{ base: "0.6rem", sm:"0.7rem", md:"1.2rem", lg:"1.5rem" }}
+            </HStack>
+            <HStack
+                width={"80%"}
+                height={"100%"}
+                justifyContent={"center"}
+                alignItems={"center"}
+            >
+                {companyInfo.map((el, idx) => (
+                    <VStack
+                        key={idx}
+                        bgColor={"white"}
+                        width={"full"}
+                        height={"15rem"}
+                        borderRadius={"1rem"}
+                        boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}
+                        borderWidth={1}
                     >
-                        {t("about.visionTitle")}
-                    </Text>
-                    <Text
-                        textAlign={"center"}
-                        fontWeight={"bold"}
-                        fontSize={{ base: "0.6rem", sm: "0.6rem", md: "0.8rem", lg: "1rem" }}
-                        textShadow={"1px 1px 4px white"}
-                    >
-                        {t("about.visionDescription")}
-                    </Text>
-                </VStack>
-                <VStack
-                    bgGradient={"linear(to right, #808182, #A67F78, #808182)"}
-                    borderRadius={"2rem"}
-                    width={"50%"}
-                    height={"12rem"}
-                    alignItems={"center"}
-                >
-                    <Text
-                        color={"whitesmoke"}
-                        textShadow={"1px 1px 4px black"}
-                        fontSize={{ base:"0.6rem", sm:"0.7rem", md:"1.2rem", lg:"1.5rem" }}
-                    >
-                        {t("about.philosophyTitle")}
-                    </Text>
-                    <Text
-                        textAlign={"center"}
-                        fontWeight={"bold"}
-                        fontSize={{ base:"0.6rem", sm:"0.6rem", md:"0.8rem", lg:"1rem" }}
-                        textShadow={"1px 1px 4px white"}
-                    >
-                        {t("about.philosophyDescription")}
-                    </Text>
-                </VStack>
-                <VStack
-                    bgGradient={"linear(to right, #808182, #E1DCD9, #808182)"}
-                    borderRadius={"2rem"}
-                    width={"50%"}
-                    height={"12rem"}
-                    alignItems={"center"}
-                    flexDir={"column"}
-                >
-                    <Text
-                        color={"whitesmoke"}
-                        textShadow={"1px 1px 4px black"}
-                        fontSize={{ base:"0.6rem", sm:"0.7rem", md:"1.2rem", lg:"1.5rem" }}
-                    >
-                        {t("about.policyTitle")}
-                    </Text>
-                    <Text
-                        textAlign={"center"}
-                        fontWeight={"bold"}
-                        fontSize={{ base:"0.6rem", sm:"0.6rem", md:"0.8rem", lg:"1rem" }}
-                        textShadow={"1px 1px 4px white"}
-                    >
-                        {t("about.policyDescription")}
-                    </Text>
-                </VStack>
-            </VStack>
-        </HStack>
+                        <VStack justifyContent={"center"} h={"30%"} w={"full"}>
+                            <HStack spacing={3}>
+                                <Avatar
+                                    borderColor={"orange"}
+                                    borderWidth={2}
+                                    src={el.icon}
+                                    size={"sm"}
+                                />
+                                <Heading
+                                    fontSize={{
+                                        base: "0.5rem",
+                                        sm: "0.7rem",
+                                        md: "1rem",
+                                        lg: "1rem",
+                                        xl: "1.5rem",
+                                    }}
+                                >
+                                    {el.title}
+                                </Heading>
+                            </HStack>
+                        </VStack>
+                        <Divider
+                            orientation={"horizontal"}
+                            variant={"solid"}
+                            borderColor={"lightgray"}
+                        />
+                        <VStack
+                            justifyContent={"flex-start"}
+                            alignItems={"center"}
+                            h={"70%"}
+                            w={"full"}
+                            px={1}
+                        >
+                            <Text
+                                textAlign={"justify"}
+                                fontSize={{
+                                    base: "0.5rem",
+                                    sm: "0.5rem",
+                                    md: "0.6rem",
+                                    lg: "0.6rem",
+                                    xl: "1rem",
+                                }}
+                            >
+                                {el.description}
+                            </Text>
+                        </VStack>
+                    </VStack>
+                ))}
+            </HStack>
+        </VStack>
     );
 };
 
