@@ -8,7 +8,7 @@ const Footer = () => {
         <Box
             w={"full"}
             h={"15vh"}
-            bg={"#CCD9E2"}
+            bg={"#a2a1a5"}
       
         >
             <VStack
