@@ -26,7 +26,7 @@ const Footer = () => {
                     borderColor={"whitesmoke"}
                 />
                 <HStack>
-                    <Text>{t("footer.address")}</Text>
+                    <Text color={"whitesmoke"}>{t("footer.address")}</Text>
                 </HStack>
             </VStack>
         </Box>

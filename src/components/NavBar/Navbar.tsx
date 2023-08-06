@@ -31,7 +31,7 @@ const Navbar = () => {
         <Box
             w={"full"}
             h={"10vh"}
-            bgGradient={"linear(to-t, #FFC63E, #808182)"}
+            bgGradient={"linear(to-t, #000000, #808182)"}
             mb={0}
         >
             <HStack

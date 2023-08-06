@@ -27,5 +27,15 @@
         "policyTitle": "Nuestra Política",
         "policyDescription": "Lograr los resultados y satisfacer la necesidad de nuestros clientes, trabajando en equipo con ellos en un espacio de respeto y compromiso constante.",
         "history": "A partir de un equipo técnico y comercial altamente calificado nace en el año 2003 Conduflex S.A. Desde sus inicios la empresa se dedicó a desarrollarse en forma activa en orientación al cliente, buscando satisfacer las necesidades del mercado con productos de primera calidad y a precio competitivo. El tiempo y la confianza que depositaron en nosotros nuestros clientes, nos llevo por nuevos desafíos, permitiéndonos ser también proveedores de soluciones en materia de conducción eléctrica, para diversas industrias bajo diversos requerimientos. Hoy, más afianzados que nunca, en Conduflex buscamos ser su aliado de confianza para el crecimiento de su negocio."
+    },
+    "contact": {
+        "businessHoursTitle": "Nuestros Horarios",
+        "businessHours": "Lunes a Viernes de 9:00 hs  a 16:00 hs",
+        "contactTitle": "Como contactarnos",
+        "contact": {
+            "clients": "Clientes: ventas@conduflex.com.ar",
+            "providers": "Proveedores: compras@conduflex.com.ar",
+            "phone": "Teléfono: 5197-0663"
+        }
     }
 }

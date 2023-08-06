@@ -37,9 +37,9 @@ const FadingTexts = () => {
                     {t("fadingTexts.title")}
                 </Heading>
                 <Text
-                    color={"primary"}
+                    color={"secondary"}
                     fontSize={{ base:"lg", sm:"lg", md:"lg", lg:"2xl", xl:"3xl" }}
-                    textShadow={"2px 2px 4px rgba(0, 0, 0, 0.1)"}
+                    textShadow={"2px 2px 4px rgba(0, 0, 0, 0.4)"}
                     textAlign={"center"}
                 >
                     {message}

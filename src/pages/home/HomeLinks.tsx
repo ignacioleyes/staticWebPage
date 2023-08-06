@@ -35,9 +35,7 @@ const HomeLinks = () => {
             {links.map((el, idx) => (
                 <VStack
                     key={idx}
-                    bgGradient={
-                        "linear(to bottom, #898989, #707174, #898989, #d1d0d2)"
-                    }
+                    bgGradient={"linear(to-t, black, #808182)"}
                     width={"15rem"}
                     height={"5rem"}
                     borderRadius={"1rem"}

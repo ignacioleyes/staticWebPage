@@ -15,6 +15,7 @@ const NavbarItem = ({ label, to, path }: Props) => {
             <VStack justifyContent={"center"} h={"full"} p={8}>
                 <Text
                     fontSize={"1.3rem"}
+                    color={"whitesmoke"}
                     _hover={{
                         transform: "scale(1.09)",
                         fontWeight: "bold",
