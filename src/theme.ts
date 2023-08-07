@@ -3,7 +3,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 // Define the @font-face declaration
 const fontStyles = `
-  @font-face {
+  @fontFace {
     font-family: 'Objet-Regular';
     src: url('./Objet-Regular.ttf') format('truetype');
   }
@@ -14,7 +14,7 @@ export const theme = extendTheme({
     styles: {
         global: {
             // Include the font declaration in the global styles
-            "@font-face": fontStyles,
+            "@fontFace": fontStyles,
         },
     },
     colors: {

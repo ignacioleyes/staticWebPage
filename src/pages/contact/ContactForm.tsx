@@ -18,15 +18,7 @@ import { useMutation } from "@tanstack/react-query";
 import FormikInput from "../../components/FormikInput";
 import { postResource } from "../../api/api";
 import { useAuthHeader } from "react-auth-kit";
-
-const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Full name is required"),
-    email: Yup.string()
-        .required("Email is required")
-        .email("Invalid email format"),
-    company: Yup.string().nullable(),
-    message: Yup.string().required("Message is required"),
-});
+import { useTranslation } from "react-i18next";
 
 const initialValues = {
     name: "",
@@ -37,13 +29,24 @@ const initialValues = {
 
 const ContactForm = () => {
     const getAuthHeader = useAuthHeader();
+    const [t] = useTranslation("global");
     const toast = useToast();
+
+    const validationSchema = Yup.object().shape({
+        name: Yup.string().required(t("contactForm.nameError")),
+        email: Yup.string()
+            .required(t("contactForm.emailError"))
+            .email(t("contactForm.emailErrorFormat")),
+        company: Yup.string().nullable(),
+        message: Yup.string().required(t("contactForm.messageError")),
+    });
 
     const formik = useFormik({
         initialValues: initialValues,
         validationSchema,
         onSubmit: async () => {
             await contact();
+            formik.resetForm();
         },
     });
 
@@ -94,37 +97,40 @@ const ContactForm = () => {
                             <FormikInput
                                 name="name"
                                 id="name"
-                                placeholder="Full name"
+                                placeholder={t("contactForm.namePlaceholder")}
                                 isRequired={true}
                                 value={formik.values.name}
                                 onChange={formik.handleChange}
                                 error={formik.errors.name}
                                 touched={formik.touched.name}
-                                label="Full Name"
+                                label={t("contactForm.nameLabel")}
                             />
                         </GridItem>
                         <GridItem colSpan={1}>
                             <FormikInput
                                 name="email"
                                 id="email"
-                                placeholder="Type your email"
+                                placeholder={t("contactForm.emailPlaceholder")}
                                 isRequired={true}
                                 value={formik.values.email}
                                 onChange={formik.handleChange}
                                 error={formik.errors.email}
                                 touched={formik.touched.email}
-                                label="Email"
+                                label={t("contactForm.emailLabel")}
                             />
                         </GridItem>
                         <GridItem colSpan={1}>
                             <FormikInput
                                 name="company"
                                 id="company"
+                                placeholder={t(
+                                    "contactForm.companyPlaceholder"
+                                )}
                                 value={formik.values.company}
                                 onChange={formik.handleChange}
                                 error={formik.errors.company}
                                 touched={formik.touched.company}
-                                label="Company"
+                                label={t("contactForm.companyLabel")}
                             />
                         </GridItem>
                         <GridItem colSpan={1}>
@@ -136,11 +142,13 @@ const ContactForm = () => {
                                 isRequired
                             >
                                 <FormLabel htmlFor="message">
-                                    Message:
+                                    {t("contactForm.messageLabel")}
                                 </FormLabel>
                                 <Textarea
                                     errorBorderColor="none"
-                                    placeholder="Type a message..."
+                                    placeholder={t(
+                                        "contactForm.messagePlaceholder"
+                                    )}
                                     id="message"
                                     name="message"
                                     value={formik.values.message}

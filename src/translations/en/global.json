@@ -37,5 +37,19 @@
             "providers": "Providers: compras@conduflex.com.ar",
             "phone": "Phone: 5197-0663"
         }
+    },
+    "contactForm": {
+        "nameLabel": "Full Name",
+        "namePlaceholder": "Full Name",
+        "nameError": "Name is required",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Type your email",
+        "emailError": "Email is required",
+        "emailErrorFormat": "Invalid email format",
+        "companyLabel": "Company",
+        "companyPlaceholder": "Company",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Type a message...",
+        "messageError": "Message is required"
     }
 }

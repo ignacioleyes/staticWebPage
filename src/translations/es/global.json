@@ -37,5 +37,19 @@
             "providers": "Proveedores: compras@conduflex.com.ar",
             "phone": "Teléfono: 5197-0663"
         }
+    },
+    "contactForm": {
+        "nameLabel": "Nombre",
+        "namePlaceholder": "Nombre y Apellido",
+        "nameError": "El nombre es requerido",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Escribí tu email",
+        "emailError": "Tu email es requerido",
+        "emailErrorFormat": "Formato de email incorrecto",
+        "companyLabel": "Empresa",
+        "companyPlaceholder": "Nombre de la empresa",
+        "messageLabel": "Mensaje",
+        "messagePlaceholder": "Escribí un mensaje...",
+        "messageError": "El mensaje es requerido"
     }
 }
