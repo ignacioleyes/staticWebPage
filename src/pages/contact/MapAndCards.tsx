@@ -23,12 +23,13 @@ const MapAndCards = () => {
         },
     ];
     return (
-        <VStack height={"80vh"} spacing={0} mb={5} mt={2}>
+        <VStack height={"auto"} spacing={0} mb={5} mt={5}>
             <HStack
                 width={"60%"}
                 height={"100%"}
                 justifyContent={"center"}
                 alignItems={"center"}
+                mb={5}
             >
                 {contactInfo.map((el, idx) => (
                     <VStack

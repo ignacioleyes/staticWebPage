@@ -6,7 +6,7 @@ const Banner = () => {
         <Box
             bgImage={BannerContactUs}
             w={"full"}
-            minH={"20vh"}
+            minH={"15vh"}
             bgPos={"center"}
             bgRepeat={"no-repeat"}
             bgSize={"cover"}

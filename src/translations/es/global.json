@@ -50,6 +50,7 @@
         "companyPlaceholder": "Nombre de la empresa",
         "messageLabel": "Mensaje",
         "messagePlaceholder": "Escribí un mensaje...",
-        "messageError": "El mensaje es requerido"
+        "messageError": "El mensaje es requerido",
+        "button": "Enviar"
     }
 }

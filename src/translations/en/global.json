@@ -50,6 +50,7 @@
         "companyPlaceholder": "Company",
         "messageLabel": "Message",
         "messagePlaceholder": "Type a message...",
-        "messageError": "Message is required"
+        "messageError": "Message is required",
+        "button": "Submit"
     }
 }

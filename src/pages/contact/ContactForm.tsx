@@ -76,7 +76,7 @@ const ContactForm = () => {
     );
 
     return (
-        <VStack height={"40vh"} spacing={0} mb={5} mt={2}>
+        <VStack height={"auto"} spacing={0} mb={5}>
             <HStack
                 width={"60%"}
                 height={"auto"}
@@ -171,11 +171,11 @@ const ContactForm = () => {
                             >
                                 <Button
                                     type="submit"
-                                    colorScheme={"orange"}
                                     minWidth={"8rem"}
                                     isLoading={isLoading}
+                                    bgColor={"primary"}
                                 >
-                                    Submit
+                                    {t("contactForm.button")}
                                 </Button>
                             </HStack>
                         </GridItem>
