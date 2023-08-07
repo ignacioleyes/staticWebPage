@@ -33,7 +33,7 @@ const About = () => {
         },
     ];
     return (
-        <VStack height={"80vh"} spacing={0} mb={5} mt={5}>
+        <VStack height={"98vh"} spacing={0} mt={5}>
             <HStack
                 width={"80%"}
                 height={"100%"}
@@ -116,7 +116,7 @@ const About = () => {
                                     sm: "0.6rem",
                                     md: "0.7rem",
                                     lg: "0.8rem",
-                                    xl: "1.2rem",
+                                    xl: "1.1rem",
                                 }}
                             >
                                 {el.description}

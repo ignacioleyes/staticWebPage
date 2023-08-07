@@ -30,8 +30,7 @@ const Navbar = () => {
     return (
         <Box
             w={"full"}
-            h={"18vh"}
-            // bgGradient={"linear(to-t, #000000, #808182)"}
+            h={"16vh"}
             bg={"white"}
             mb={0}
         >
@@ -47,9 +46,9 @@ const Navbar = () => {
                 }}
                 alignItems={"center"}
             >
-                <HStack spacing={5} h="full" alignItems={"center"}>
+                <HStack h="full">
                     <Link href={"/"} h={"full"}>
-                        <Image src={Logo} alt={"Conduflex"} h={"full"} />
+                        <Image src={Logo} alt={"Conduflex"} h={"80%"} />
                     </Link>
                 </HStack>
                 <Hide below="md">
@@ -65,8 +64,8 @@ const Navbar = () => {
                     </HStack>
                     <VStack spacing={3}>
                         <Box
-                            maxW={"4rem"}
-                            height={"2.5rem"}
+                            maxW={"3.5rem"}
+                            height={"2rem"}
                             _hover={{
                                 cursor: "pointer",
                                 transform: "scale(1.09)",
@@ -76,8 +75,8 @@ const Navbar = () => {
                             <Image src={ARGFLAG} alt={"usa"} h={"full"} />
                         </Box>
                         <Box
-                            maxW={"4rem"}
-                            height={"2.5rem"}
+                            maxW={"3.5rem"}
+                            height={"1.8rem"}
                             _hover={{
                                 cursor: "pointer",
                                 transform: "scale(1.09)",

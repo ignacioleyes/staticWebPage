@@ -13,12 +13,11 @@ const NavbarItem = ({ label, to, path }: Props) => {
         <Link to={to}>
             <VStack justifyContent={"center"} h={"full"} p={8}>
                 <Text
-                    fontSize={{ lg: "1.4rem", xl: "1.8rem" }}
+                    fontSize={{ lg: "1.4rem", xl: "1.4rem" }}
                     color={"primary"}
                     _hover={{
                         transform: "scale(1.01)",
-                        fontWeight: "bold",
-                        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
+                        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
                     }}
                     fontWeight={location.pathname === path ? "bold" : "bold"}
                     borderBottom={location.pathname === path ? "4px" : "unset"}
