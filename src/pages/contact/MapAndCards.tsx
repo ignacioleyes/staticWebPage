@@ -124,7 +124,7 @@ const MapAndCards = () => {
                     borderRadius={"1rem"}
                     loading="lazy"
                     allowFullScreen
-                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3bGWTxC4vJURuDSNzFDXgcg&key=AIzaSyA-oS6svoGX1GVNBGv3-iw650hmbq733FY"
+                    src={import.meta.env["VITE_GOOGLEMAPS_KEY"]}
                 ></chakra.iframe>
             </HStack>
         </VStack>
