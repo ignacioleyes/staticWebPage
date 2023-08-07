@@ -25,7 +25,7 @@ const FadingTexts = () => {
     }, [currentMessageIndex, t]);
 
     return (
-        <HStack justifyContent={"center"} height="auto" width="100%"  mt={5}>
+        <HStack justifyContent={"center"} height="20rem" width="100%"  mt={5}>
             <VStack>
                 <Heading
                     size={{ base:"lg", sm:"lg", md:"lg", lg:"2xl", xl:"3xl" }}

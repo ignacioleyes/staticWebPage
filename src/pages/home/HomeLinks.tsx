@@ -38,7 +38,7 @@ const HomeLinks = () => {
                     key={idx}
                     bgGradient={"linear(to-t, black, #808182)"}
                     width={"full"}
-                    height={"10rem"}
+                    height={"12rem"}
                     borderRadius={"0.3rem"}
                     boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}
                     cursor={"pointer"}

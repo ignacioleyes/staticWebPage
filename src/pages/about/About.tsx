@@ -113,9 +113,9 @@ const About = () => {
                                 textAlign={"justify"}
                                 fontSize={{
                                     base: "0.45rem",
-                                    sm: "0.4rem",
-                                    md: "0.6rem",
-                                    lg: "0.6rem",
+                                    sm: "0.6rem",
+                                    md: "0.7rem",
+                                    lg: "0.8rem",
                                     xl: "1.2rem",
                                 }}
                             >
