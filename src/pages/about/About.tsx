@@ -33,14 +33,16 @@ const About = () => {
         },
     ];
     return (
-        <VStack height={"80vh"} spacing={0} mb={5}>
+        <VStack height={"80vh"} spacing={0} mb={5} mt={5}>
             <HStack
                 width={"80%"}
                 height={"100%"}
                 justifyContent={"center"}
                 alignItems={"center"}
+                borderRadius={"1rem"}
+                boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}
             >
-                <Box width={"100%"}>
+                <Box width={"80%"}>
                     <Text
                         color={"secondary"}
                         textAlign={"justify"}
@@ -50,7 +52,7 @@ const About = () => {
                             sm: "0.7rem",
                             md: "0.8rem",
                             lg: "1rem",
-                            xl: "1.2rem",
+                            xl: "1.5rem",
                         }}
                     >
                         {t("about.history")}
@@ -72,6 +74,7 @@ const About = () => {
                         borderRadius={"1rem"}
                         boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}
                         borderWidth={1}
+                        p={5}
                     >
                         <VStack justifyContent={"center"} h={"30%"} w={"full"}>
                             <HStack spacing={3}>
@@ -79,7 +82,7 @@ const About = () => {
                                     borderColor={"orange"}
                                     borderWidth={2}
                                     src={el.icon}
-                                    size={"sm"}
+                                    size={{base: "sm", sm: "sm", md: "md", lg: "lg", xl: "lg"}}
                                 />
                                 <Heading
                                     fontSize={{
@@ -87,7 +90,7 @@ const About = () => {
                                         sm: "0.7rem",
                                         md: "1rem",
                                         lg: "1rem",
-                                        xl: "1.5rem",
+                                        xl: "1.8rem",
                                     }}
                                 >
                                     {el.title}
@@ -109,11 +112,11 @@ const About = () => {
                             <Text
                                 textAlign={"justify"}
                                 fontSize={{
-                                    base: "0.5rem",
-                                    sm: "0.5rem",
+                                    base: "0.45rem",
+                                    sm: "0.4rem",
                                     md: "0.6rem",
                                     lg: "0.6rem",
-                                    xl: "1rem",
+                                    xl: "1.2rem",
                                 }}
                             >
                                 {el.description}

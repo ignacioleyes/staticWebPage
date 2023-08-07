@@ -1,4 +1,4 @@
-import { Box, HStack, Hide, Link, Image, Icon, Show } from "@chakra-ui/react";
+import { Box, HStack, Hide, Link, Image, Icon, Show, VStack } from "@chakra-ui/react";
 import NavbarItem from "./NavBarItem";
 import Logo from "../../assets/images/logoConduflex.png";
 import USAFLAG from "../../assets/images/usa-flag.png";
@@ -30,8 +30,9 @@ const Navbar = () => {
     return (
         <Box
             w={"full"}
-            h={"10vh"}
-            bgGradient={"linear(to-t, #000000, #808182)"}
+            h={"18vh"}
+            // bgGradient={"linear(to-t, #000000, #808182)"}
+            bg={"white"}
             mb={0}
         >
             <HStack
@@ -62,10 +63,10 @@ const Navbar = () => {
                             />
                         ))}
                     </HStack>
-                    <HStack>
+                    <VStack spacing={3}>
                         <Box
-                            maxW={"3.5rem"}
-                            height={"2.1rem"}
+                            maxW={"4rem"}
+                            height={"2.5rem"}
                             _hover={{
                                 cursor: "pointer",
                                 transform: "scale(1.09)",
@@ -75,8 +76,8 @@ const Navbar = () => {
                             <Image src={ARGFLAG} alt={"usa"} h={"full"} />
                         </Box>
                         <Box
-                            maxW={"3.5rem"}
-                            height={"2rem"}
+                            maxW={"4rem"}
+                            height={"2.5rem"}
                             _hover={{
                                 cursor: "pointer",
                                 transform: "scale(1.09)",
@@ -85,13 +86,13 @@ const Navbar = () => {
                         >
                             <Image src={USAFLAG} alt={"arg"} h={"full"} />
                         </Box>
-                    </HStack>
+                    </VStack>
                 </Hide>
                 <Show below="md">
                     <Icon
                         boxSize={6}
                         as={RxHamburgerMenu}
-                        color={"whitesmoke"}
+                        color={"black"}
                         onClick={() => setIsOpen(true)}
                         _hover={{ transform: "scale(1.1)", cursor: "pointer" }}
                         m={3}
