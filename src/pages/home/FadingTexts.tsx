@@ -29,8 +29,8 @@ const FadingTexts = () => {
             <VStack>
                 <Heading
                     size={{ base:"lg", sm:"lg", md:"lg", lg:"2xl", xl:"3xl" }}
-                    color={"secondary"}
-                    textShadow={"2px 2px 4px rgba(0, 0, 0, 0.4)"}
+                    color={"primary"}
+                    textShadow={"2px 2px 4px rgba(0, 0, 0, 0.1)"}
                     p={5}
                     textAlign={"center"}
                 >

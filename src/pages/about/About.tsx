@@ -6,6 +6,7 @@ import {
     Avatar,
     Heading,
     Divider,
+    Flex,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import MissionIcon from "../../assets/images/missionIcon.png";
@@ -48,9 +49,9 @@ const About = () => {
                         textAlign={"justify"}
                         fontWeight={"bold"}
                         fontSize={{
-                            base: "0.6rem",
-                            sm: "0.7rem",
-                            md: "0.8rem",
+                            base: "0.75rem",
+                            sm: "0.9rem",
+                            md: "0.9rem",
                             lg: "1rem",
                             xl: "1.5rem",
                         }}
@@ -59,22 +60,36 @@ const About = () => {
                     </Text>
                 </Box>
             </HStack>
-            <HStack
+            <Flex
                 width={"80%"}
                 height={"100%"}
                 justifyContent={"center"}
                 alignItems={"center"}
+                flexDir={{
+                    base: "column",
+                    sm: "column",
+                    md: "row",
+                    lg: "row",
+                    xl: "row",
+                }}
             >
                 {companyInfo.map((el, idx) => (
                     <VStack
                         key={idx}
                         bgColor={"whitesmoke"}
                         width={"full"}
-                        height={"15rem"}
+                        height={{
+                            base: "8rem",
+                            sm: "8rem",
+                            md: "15rem",
+                            lg: "15rem",
+                            xl: "15rem",
+                        }}
                         borderRadius={"1rem"}
                         boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}
                         borderWidth={1}
                         p={5}
+                        m={2}
                     >
                         <VStack justifyContent={"center"} h={"30%"} w={"full"}>
                             <HStack spacing={3}>
@@ -82,7 +97,13 @@ const About = () => {
                                     borderColor={"orange"}
                                     borderWidth={2}
                                     src={el.icon}
-                                    size={{base: "sm", sm: "sm", md: "md", lg: "lg", xl: "lg"}}
+                                    size={{
+                                        base: "sm",
+                                        sm: "sm",
+                                        md: "md",
+                                        lg: "lg",
+                                        xl: "lg",
+                                    }}
                                 />
                                 <Heading
                                     fontSize={{
@@ -124,7 +145,7 @@ const About = () => {
                         </VStack>
                     </VStack>
                 ))}
-            </HStack>
+            </Flex>
         </VStack>
     );
 };

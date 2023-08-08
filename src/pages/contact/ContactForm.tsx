@@ -78,7 +78,7 @@ const ContactForm = () => {
     return (
         <VStack height={"auto"} spacing={0} mb={5}>
             <HStack
-                width={"60%"}
+                width={"75%"}
                 height={"auto"}
                 justifyContent={"center"}
                 alignItems={"center"}

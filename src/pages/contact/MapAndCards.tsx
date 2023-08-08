@@ -25,7 +25,7 @@ const MapAndCards = () => {
     return (
         <VStack height={"auto"} spacing={0} mb={5} mt={5}>
             <HStack
-                width={"60%"}
+                width={"75%"}
                 height={"100%"}
                 justifyContent={"center"}
                 alignItems={"center"}
@@ -45,7 +45,7 @@ const MapAndCards = () => {
                             <HStack spacing={3}>
                                 <Heading
                                     fontSize={{
-                                        base: "0.5rem",
+                                        base: "0.6rem",
                                         sm: "0.7rem",
                                         md: "1rem",
                                         lg: "1rem",
@@ -71,7 +71,7 @@ const MapAndCards = () => {
                             <Text
                                 textAlign={"center"}
                                 fontSize={{
-                                    base: "0.5rem",
+                                    base: "0.6rem",
                                     sm: "0.5rem",
                                     md: "0.6rem",
                                     lg: "0.6rem",
@@ -85,7 +85,7 @@ const MapAndCards = () => {
                                     <Text
                                         textAlign={"center"}
                                         fontSize={{
-                                            base: "0.5rem",
+                                            base: "0.6rem",
                                             sm: "0.5rem",
                                             md: "0.6rem",
                                             lg: "0.6rem",
@@ -97,7 +97,7 @@ const MapAndCards = () => {
                                     <Text
                                         textAlign={"justify"}
                                         fontSize={{
-                                            base: "0.5rem",
+                                            base: "0.6rem",
                                             sm: "0.5rem",
                                             md: "0.6rem",
                                             lg: "0.6rem",
@@ -113,7 +113,7 @@ const MapAndCards = () => {
                 ))}
             </HStack>
             <HStack
-                width={"60%"}
+                width={"75%"}
                 height={"100%"}
                 justifyContent={"center"}
                 alignItems={"center"}
