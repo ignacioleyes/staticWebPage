@@ -5,6 +5,7 @@ import USAFLAG from "../../assets/images/usa-flag.png";
 import ARGFLAG from "../../assets/images/argentina-flag.png";
 import { MdOutlineClose } from "react-icons/md";
 import { keyframes } from "@emotion/react";
+import { useEffect } from "react";
 
 interface Props {
     setIsOpen: (value: boolean) => void;
@@ -12,6 +13,26 @@ interface Props {
 
 const SidebarHamburgerMenu = ({ setIsOpen }: Props) => {
     const [t, i18n] = useTranslation("global");
+
+    // Function to close the sidebar when clicking outside
+    const handleCloseSidebar = (event: MouseEvent) => {
+        const target = event.target as HTMLElement;
+        const sidebar = document.getElementById("sidebar");
+
+        // Check if the click occurred outside the sidebar using the element ID
+        if (sidebar && !sidebar.contains(target)) {
+            setIsOpen(false);
+        }
+    };
+
+    // Add event listener to handle clicks outside the sidebar
+    useEffect(() => {
+        document.addEventListener("mousedown", handleCloseSidebar);
+        return () => {
+            document.removeEventListener("mousedown", handleCloseSidebar);
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const NAV_ITEMS = [
         {
@@ -43,6 +64,7 @@ const SidebarHamburgerMenu = ({ setIsOpen }: Props) => {
 
     return (
         <VStack
+            id="sidebar"
             bg={"blackAlpha.900"}
             opacity={"0.95"}
             width={"10rem"}
@@ -64,7 +86,11 @@ const SidebarHamburgerMenu = ({ setIsOpen }: Props) => {
             />
             <VStack width={"100%"} color={"whitesmoke"} spacing={8}>
                 {NAV_ITEMS.map((item, idx) => (
-                    <Link to={item.path!} key={idx} onClick={() => setIsOpen(false)}>
+                    <Link
+                        to={item.path!}
+                        key={idx}
+                        onClick={() => setIsOpen(false)}
+                    >
                         <Box>
                             <Center
                                 color={"FFFFFF"}
