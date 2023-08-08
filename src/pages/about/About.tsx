@@ -79,7 +79,7 @@ const About = () => {
                         bgColor={"whitesmoke"}
                         width={"full"}
                         height={{
-                            base: "8rem",
+                            base: "7rem",
                             sm: "8rem",
                             md: "15rem",
                             lg: "15rem",
