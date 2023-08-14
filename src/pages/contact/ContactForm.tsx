@@ -19,12 +19,14 @@ import FormikInput from "../../components/FormikInput";
 import { postResource } from "../../api/api";
 import { useAuthHeader } from "react-auth-kit";
 import { useTranslation } from "react-i18next";
+import moment from "moment";
 
 const initialValues = {
     name: "",
     company: "",
     email: "",
     message: "",
+    creationDate: moment().format("yyyy-MM-DD"),
 };
 
 const ContactForm = () => {

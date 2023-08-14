@@ -5,25 +5,20 @@ import {
     Heading,
     Divider,
     Text,
+    Center,
+    Link,
+    Image,
+    Hide,
 } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next";
+import { ContactInfoItem } from "../../api/types";
 
-const MapAndCards = () => {
-    const [t] = useTranslation("global");
-    const contactInfo = [
-        {
-            title: `${t("contact.businessHoursTitle")}`,
-            description: `${t("contact.businessHours")}`,
-        },
-        {
-            title: `${t("contact.contactTitle")}`,
-            description: `${t("contact.contact.clients")}`,
-            description2: `${t("contact.contact.providers")}`,
-            description3: `${t("contact.contact.phone")}`,
-        },
-    ];
+interface Props {
+    contactInfo: ContactInfoItem[];
+}
+
+const MapAndCards = ({ contactInfo }: Props) => {
     return (
-        <VStack height={"auto"} spacing={0} mb={5} mt={5}>
+        <VStack height={"auto"} spacing={0} mb={5} mt={5} position={"relative"}>
             <HStack
                 width={"75%"}
                 height={"100%"}
@@ -41,7 +36,12 @@ const MapAndCards = () => {
                         boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}
                         borderWidth={1}
                     >
-                        <VStack justifyContent={"center"} h={"30%"} w={"full"}>
+                        <VStack
+                            justifyContent={"center"}
+                            h={"30%"}
+                            w={"full"}
+                            position={"relative"}
+                        >
                             <HStack spacing={3}>
                                 <Heading
                                     fontSize={{
@@ -55,6 +55,29 @@ const MapAndCards = () => {
                                     {el.title}
                                 </Heading>
                             </HStack>
+                            <Hide below="md">
+                                <Link
+                                    href="https://api.whatsapp.com/send?phone=5491127093267"
+                                    isExternal
+                                    mb={3}
+                                    mt={3}
+                                    position={"absolute"}
+                                    zIndex={2}
+                                    top={-2}
+                                    right={1}
+                                    _hover={{
+                                        transform: "scale(1.1)",
+                                        cursor: "pointer",
+                                    }}
+                                >
+                                    <Center key={idx}>
+                                        <Image
+                                            src={el.whatsapp}
+                                            width={"2.5rem"}
+                                        ></Image>
+                                    </Center>
+                                </Link>
+                            </Hide>
                         </VStack>
                         <Divider
                             orientation={"horizontal"}
