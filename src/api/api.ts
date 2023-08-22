@@ -1,4 +1,4 @@
-import { KeyValuePair } from "./types";
+import { ApiListResponse, KeyValuePair } from "./types";
 import axios from "axios";
 
 export const client = axios.create({
@@ -12,5 +12,18 @@ export const postResource = async (
 ) => {
     return await client.post(`/${resource}`, data, {
         headers: { Authorization: authHeader },
+    });
+};
+
+export const getResourceList = async <T>(
+    resource: string,
+    authHeader: string
+) => {
+    return await client.get<ApiListResponse<T>>(resource, {
+        headers: { Authorization: authHeader },
+        params: {
+            "range.Start": 0,
+            "range.End": 10000,
+        },
     });
 };

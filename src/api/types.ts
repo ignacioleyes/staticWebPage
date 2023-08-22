@@ -4,10 +4,37 @@ export interface KeyValuePair {
     [key: string]: any;
 }
 
+export interface ApiListResponse<T> {
+    items: T[];
+    totalCount: number;
+}
+
 export interface ContactInfoItem {
     title: string;
     description: string;
     description2?: string;
     description3?: string;
     whatsapp?: typeof WhatsappIcon;
-  }
+}
+
+export interface Product {
+    id: number;
+    name: string;
+    englishName: string;
+    description: string;
+    englishDescription: string;
+    brand: BrandEnum;
+    characteristics: string;
+    englishCharacteristics: string;
+    price: number;
+    productImage: string;
+    certificationsImage: string;
+    characteristicsImages: string[];
+    tablesImage: string;
+    alternatives: string;
+    englishAlternatives: string;
+}
+
+export enum BrandEnum {
+    Test,
+}
