@@ -4,11 +4,17 @@ import { getResourceList } from "../../api/api";
 import { Product } from "../../api/types";
 import { Image, SimpleGrid, Text, VStack, HStack } from "@chakra-ui/react";
 import Loading from "../../components/Loading";
+import SearchIcon from "../../assets/images/search.png";
+import { Link } from "react-router-dom";
 
 const Products = () => {
     const getAuthHeader = useAuthHeader();
 
-    const { data: items, isSuccess, isLoading } = useQuery(
+    const {
+        data: items,
+        isSuccess,
+        isLoading,
+    } = useQuery(
         ["products"],
         () => getResourceList<Product>("products", getAuthHeader()),
         { select: (r) => r.data }
@@ -52,9 +58,19 @@ const Products = () => {
                             </Text>
                             <Text textAlign={"center"}>{el.description}</Text>
                         </VStack>
+                        <HStack>
+                            <Link to={`/products/${el.id}`}>
+                                <Image
+                                    width={"2rem"}
+                                    src={SearchIcon}
+                                    cursor={"pointer"}
+                                    _hover={{ transform: "scale(1.1)" }}
+                                ></Image>
+                            </Link>
+                        </HStack>
                     </HStack>
                 ))}
-            {isLoading && (<Loading />)}
+            {isLoading && <Loading />}
         </SimpleGrid>
     );
 };
