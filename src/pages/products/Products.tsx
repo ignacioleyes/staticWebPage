@@ -9,6 +9,7 @@ import {
     VStack,
     HStack,
     Tooltip,
+    Hide,
 } from "@chakra-ui/react";
 import Loading from "../../components/Loading";
 import SearchIcon from "../../assets/images/search.png";
@@ -65,10 +66,19 @@ const Products = () => {
                             <Text textAlign={"center"} fontSize={"1.5rem"}>
                                 {el.name}
                             </Text>
-                            <Text textAlign={"center"}>{el.description}</Text>
+                            <Hide below="md">
+                                <Text textAlign={"center"}>
+                                    {el.description}
+                                </Text>
+                            </Hide>
                         </VStack>
                         <HStack width={"30%"} justifyContent={"center"}>
-                            <Tooltip hasArrow label={t("products.tooltip")} bg={"primary"} color={"secondary"}>
+                            <Tooltip
+                                hasArrow
+                                label={t("products.tooltip")}
+                                bg={"primary"}
+                                color={"secondary"}
+                            >
                                 <Link to={`/products/${el.id}`}>
                                     <Image
                                         width={"2rem"}
