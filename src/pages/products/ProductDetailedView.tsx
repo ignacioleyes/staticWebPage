@@ -11,6 +11,7 @@ import {
     Heading,
     Box,
     Flex,
+    Center,
 } from "@chakra-ui/react";
 import Loading from "../../components/Loading";
 import { useTranslation } from "react-i18next";
@@ -32,79 +33,151 @@ const ProductDetailedView = () => {
     return (
         <>
             {isSuccess && (
-                <VStack
-                    width="98%"
-                    borderRadius={"2rem"}
-                    bg={"white"}
-                    p={1}
-                    m={5}
-                >
-                    <Flex>
-                        <Heading textAlign={"left"}>{product.name}</Heading>
-                    </Flex>
-                    <HStack>
-                        <VStack width={"60%"}>
-                            <Image src={product.productImage} width={"80%"} />
-                        </VStack>
-                        <VStack
-                            pl={3}
-                            pr={3}
-                            width={"40%"}
+                <Center>
+                    <VStack
+                        width="60%"
+                        borderRadius={"2rem"}
+                        bg={"white"}
+                        p={1}
+                        m={5}
+                    >
+                        <Flex
                             justifyContent={"flex-start"}
+                            flexDir={"row"}
+                            width={"80%"}
                         >
-                            <Text width={"100%"} fontSize={"1.2rem"}>
-                                {product.description}
+                            <Heading>{product.name}</Heading>
+                        </Flex>
+                        <HStack>
+                            <VStack width={"60%"}>
+                                <Image
+                                    src={product.productImage}
+                                    width={"90%"}
+                                />
+                            </VStack>
+                            <VStack
+                                pl={3}
+                                pr={3}
+                                width={"40%"}
+                                justifyContent={"flex-start"}
+                            >
+                                <Text width={"100%"} fontSize={"1.2rem"}>
+                                    {product.description}
+                                </Text>
+                            </VStack>
+                        </HStack>
+                        <Flex
+                            justifyContent={"flex-start"}
+                            flexDir={"row"}
+                            width={"80%"}
+                            mb={2}
+                            mt={2}
+                        >
+                            <Heading>{t("products.featuresTitle")}</Heading>
+                        </Flex>
+                        <HStack
+                            justifyContent={"flex-start"}
+                            width={"80%"}
+                            mb={2}
+                        >
+                            <Box>
+                                {product.characteristics
+                                    .split("*")
+                                    .map((part) => part.trim()) // Trim each part
+                                    .filter((part) => part !== "") // Filter out empty parts
+                                    .map((filteredPart, index) => (
+                                        <Text key={index}>
+                                            - {filteredPart}
+                                        </Text>
+                                    ))}
+                            </Box>
+                        </HStack>
+                        {product.characteristicsImages.length > 1 && (
+                            <>
+                                <HStack
+                                    width={"80%"}
+                                    justifyContent={"flex-start"}
+                                    p={2}
+                                >
+                                    <Image
+                                        w="20%"
+                                        src={product.characteristicsImages[0]}
+                                        alt={product.characteristicsImages[0]}
+                                    />
+                                </HStack>
+                                <HStack
+                                    width={"80%"}
+                                    justifyContent={"flex-start"}
+                                    p={2}
+                                >
+                                    <Image
+                                        w="80%"
+                                        src={product.characteristicsImages[1]}
+                                        alt={product.characteristicsImages[1]}
+                                    />
+                                </HStack>
+                            </>
+                        )}
+                        {product.characteristicsImages.length === 1 && (
+                            <HStack
+                                width={"80%"}
+                                justifyContent={"flex-start"}
+                                p={2}
+                            >
+                                <Image
+                                    w="50%"
+                                    src={product.characteristicsImages[0]}
+                                    alt={product.characteristicsImages[0]}
+                                />
+                            </HStack>
+                        )}
+                        {product.certificationsImage && (
+                            <>
+                                <Flex
+                                    justifyContent={"flex-start"}
+                                    flexDir={"row"}
+                                    width={"80%"}
+                                    mb={2}
+                                    mt={2}
+                                >
+                                    <Heading>
+                                        {t("products.certifications")}
+                                    </Heading>
+                                </Flex>
+                                <VStack
+                                    width={"100%"}
+                                    justifyContent={"center"}
+                                >
+                                    <Image
+                                        w="20%"
+                                        src={product.certificationsImage}
+                                        alt={product.certificationsImage}
+                                        borderRadius={"2rem"}
+                                    />
+                                </VStack>
+                            </>
+                        )}
+                        <VStack width={"100%"} justifyContent={"center"}>
+                            <Flex
+                                justifyContent={"flex-start"}
+                                flexDir={"row"}
+                                width={"80%"}
+                            >
+                                <Heading>
+                                    {t("products.table")}
+                                </Heading>
+                            </Flex>
+                            <Image
+                                w="90%"
+                                src={product.tablesImage}
+                                alt={product.tablesImage}
+                            />
+                            <Text textAlign={"center"} fontSize={"1.5rem"} width={"80%"}>
+                                {product.alternatives}
                             </Text>
                         </VStack>
-                    </HStack>
-                    <Box>
-                        <Heading textAlign={"left"}>{t("products.featuresTitle")}</Heading>
-                    </Box>
-                    <HStack width={"30%"} justifyContent={"center"}>
-                        <Box textAlign="left">
-                            {product.characteristics
-                                .split("*")
-                                .map((part) => part.trim()) // Trim each part
-                                .filter((part) => part !== "") // Filter out empty parts
-                                .map((filteredPart, index) => (
-                                    <Text key={index}>- {filteredPart}</Text>
-                                ))}
-                        </Box>
-                    </HStack>
-                    <HStack width={"100%"} justifyContent={"center"}>
-                        <Image
-                            w="10%"
-                            src={product.characteristicsImages[0]}
-                            alt={product.characteristicsImages[0]}
-                        />
-                        <Image
-                            w="40%"
-                            src={product.characteristicsImages[1]}
-                            alt={product.characteristicsImages[1]}
-                        />
-                    </HStack>
-                    {product.certificationsImage && (
-                        <VStack width={"10%"} justifyContent={"center"}>
-                            <Image
-                                w="100%"
-                                src={product.certificationsImage}
-                                alt={product.certificationsImage}
-                                borderRadius={"2rem"}
-                            />
-                        </VStack>
-                    )}
-                    <VStack width={"50%"} justifyContent={"center"}>
-                        <Image
-                            w="100%"
-                            src={product.tablesImage}
-                            alt={product.tablesImage}
-                            borderRadius={"2rem"}
-                        />
                     </VStack>
-                    <VStack width="40%" h="100%" justifyContent={"flex-start"}>
-                        <Text textAlign={"center"}>{product.alternatives}</Text>
-                    </VStack>
-                </VStack>
+                </Center>
             )}
             {isLoading && <Loading />}
         </>

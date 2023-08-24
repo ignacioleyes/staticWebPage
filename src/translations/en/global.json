@@ -54,7 +54,9 @@
         "button": "Submit"
     },
     "products": {
-        "tooltip": "See details",
-        "featuresTitle": "Features"
+        "tooltip": "See Specs",
+        "featuresTitle": "Features",
+        "certifications": "Certifications",
+        "table": "Table"
     }
 }
