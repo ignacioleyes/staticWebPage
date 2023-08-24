@@ -2,13 +2,22 @@ import { useQuery } from "@tanstack/react-query";
 import { useAuthHeader } from "react-auth-kit";
 import { getResourceList } from "../../api/api";
 import { Product } from "../../api/types";
-import { Image, SimpleGrid, Text, VStack, HStack } from "@chakra-ui/react";
+import {
+    Image,
+    SimpleGrid,
+    Text,
+    VStack,
+    HStack,
+    Tooltip,
+} from "@chakra-ui/react";
 import Loading from "../../components/Loading";
 import SearchIcon from "../../assets/images/search.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Products = () => {
     const getAuthHeader = useAuthHeader();
+    const [t] = useTranslation("global");
 
     const {
         data: items,
@@ -58,15 +67,17 @@ const Products = () => {
                             </Text>
                             <Text textAlign={"center"}>{el.description}</Text>
                         </VStack>
-                        <HStack>
-                            <Link to={`/products/${el.id}`}>
-                                <Image
-                                    width={"2rem"}
-                                    src={SearchIcon}
-                                    cursor={"pointer"}
-                                    _hover={{ transform: "scale(1.1)" }}
-                                ></Image>
-                            </Link>
+                        <HStack width={"30%"} justifyContent={"center"}>
+                            <Tooltip hasArrow label={t("products.tooltip")} bg={"primary"} color={"secondary"}>
+                                <Link to={`/products/${el.id}`}>
+                                    <Image
+                                        width={"2rem"}
+                                        src={SearchIcon}
+                                        cursor={"pointer"}
+                                        _hover={{ transform: "scale(1.1)" }}
+                                    ></Image>
+                                </Link>
+                            </Tooltip>
                         </HStack>
                     </HStack>
                 ))}

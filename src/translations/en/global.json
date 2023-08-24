@@ -52,5 +52,9 @@
         "messagePlaceholder": "Type a message...",
         "messageError": "Message is required",
         "button": "Submit"
+    },
+    "products": {
+        "tooltip": "See details",
+        "featuresTitle": "Features"
     }
 }

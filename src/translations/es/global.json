@@ -52,5 +52,9 @@
         "messagePlaceholder": "Escribí un mensaje...",
         "messageError": "El mensaje es requerido",
         "button": "Enviar"
+    },
+    "products": {
+        "tooltip": "Ver detalles",
+        "featuresTitle": "Características"
     }
 }
