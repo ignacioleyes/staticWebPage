@@ -30,6 +30,7 @@ const ProductDetailedView = () => {
         async () => getResource<Product>(`products/${id}`, getAuthHeader()),
         { select: (r) => r.data }
     );
+
     return (
         <>
             {isSuccess && (
@@ -83,8 +84,8 @@ const ProductDetailedView = () => {
                             <Box>
                                 {product.characteristics
                                     .split("*")
-                                    .map((part) => part.trim()) // Trim each part
-                                    .filter((part) => part !== "") // Filter out empty parts
+                                    .map((part) => part.trim())
+                                    .filter((part) => part !== "") 
                                     .map((filteredPart, index) => (
                                         <Text key={index}>
                                             - {filteredPart}
@@ -163,16 +164,18 @@ const ProductDetailedView = () => {
                                 flexDir={"row"}
                                 width={"80%"}
                             >
-                                <Heading>
-                                    {t("products.table")}
-                                </Heading>
+                                <Heading>{t("products.table")}</Heading>
                             </Flex>
                             <Image
                                 w="90%"
                                 src={product.tablesImage}
                                 alt={product.tablesImage}
                             />
-                            <Text textAlign={"center"} fontSize={"1.5rem"} width={"80%"}>
+                            <Text
+                                textAlign={"center"}
+                                fontSize={"1.5rem"}
+                                width={"80%"}
+                            >
                                 {product.alternatives}
                             </Text>
                         </VStack>

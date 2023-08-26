@@ -24,6 +24,16 @@ export const getResourceList = async <T>(
     });
 };
 
+export const getPdf = async (
+    resource: string,
+    authHeader: string,
+) => {
+    return await client.get<Blob>(`/${resource}`, {
+        headers: { Authorization: authHeader },
+        responseType: "blob"
+    });
+};
+
 export const postResource = async (
     resource: string,
     authHeader: string,

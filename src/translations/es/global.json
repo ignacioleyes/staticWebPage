@@ -54,7 +54,8 @@
         "button": "Enviar"
     },
     "products": {
-        "tooltip": "Ver Ficha",
+        "tooltipSpecs": "Ver Ficha",
+        "tooltipPdf": "Descargar",
         "featuresTitle": "Características",
         "certifications": "Certificaciones",
         "table": "Tabla"

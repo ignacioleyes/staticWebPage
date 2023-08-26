@@ -15,6 +15,7 @@ import Loading from "../../components/Loading";
 import SearchIcon from "../../assets/images/search.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import PdfDownload from "./PdfDownload";
 
 const Products = () => {
     const getAuthHeader = useAuthHeader();
@@ -72,22 +73,29 @@ const Products = () => {
                                 </Text>
                             </Hide>
                         </VStack>
-                        <HStack width={"30%"} justifyContent={"center"}>
-                            <Tooltip
-                                hasArrow
-                                label={t("products.tooltip")}
-                                bg={"primary"}
-                                color={"secondary"}
-                            >
-                                <Link to={`/products/${el.id}`}>
-                                    <Image
-                                        width={"2rem"}
-                                        src={SearchIcon}
-                                        cursor={"pointer"}
-                                        _hover={{ transform: "scale(1.1)" }}
-                                    ></Image>
-                                </Link>
-                            </Tooltip>
+                        <HStack
+                            width={"30%"}
+                            justifyContent={"center"}
+                            spacing={8}
+                        >
+                            <Hide below="md">
+                                <Tooltip
+                                    hasArrow
+                                    label={t("products.tooltipSpecs")}
+                                    bg={"primary"}
+                                    color={"secondary"}
+                                >
+                                    <Link to={`/products/${el.id}`}>
+                                        <Image
+                                            width={"2.5rem"}
+                                            src={SearchIcon}
+                                            cursor={"pointer"}
+                                            _hover={{ transform: "scale(1.1)" }}
+                                        ></Image>
+                                    </Link>
+                                </Tooltip>
+                            </Hide>
+                            <PdfDownload id={el.id} />
                         </HStack>
                     </HStack>
                 ))}
