@@ -88,25 +88,26 @@ const ProductDetailedView = () => {
                             mb={2}
                         >
                             <Box>
-                                {i18n.language === "es"
-                                    ? product.characteristics
-                                          .split("*")
-                                          .map((part) => part.trim())
-                                          .filter((part) => part !== "")
-                                          .map((filteredPart, index) => (
-                                              <Text key={index}>
-                                                  - {filteredPart}
-                                              </Text>
-                                          ))
-                                    : product.englishCharacteristics
-                                          .split("–")
-                                          .map((part) => part.trim())
-                                          .filter((part) => part !== "")
-                                          .map((filteredPart, index) => (
-                                              <Text key={index}>
-                                                  - {filteredPart}
-                                              </Text>
-                                          ))}
+                                {i18n.language === "es" ? 
+                                    product.characteristics
+                                        .split("*")
+                                        .map((part) => part.trim())
+                                        .filter((part) => part !== "") 
+                                        .map((filteredPart, index) => (
+                                            <Text key={index}>
+                                                - {filteredPart}
+                                            </Text>
+                                        ))
+                                :   product.englishCharacteristics
+                                        .split("*")
+                                        .map((part) => part.trim())
+                                        .filter((part) => part !== "") 
+                                        .map((filteredPart, index) => (
+                                            <Text key={index}>
+                                                - {filteredPart}
+                                            </Text>
+                                        ))
+                                }
                             </Box>
                         </HStack>
                         {product.characteristicsImages.length > 1 && (
