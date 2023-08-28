@@ -13,12 +13,6 @@ const PdfDownload = ({ id }: Props) => {
     const getAuthHeader = useAuthHeader();
     const [t] = useTranslation("global");
 
-    // const { data: pdf, isSuccess } = useQuery(
-    //     ["downloadPdf"],
-    //     async () => getPdf(`products/downloadPdf/${id}`, getAuthHeader()),
-    //     { select: (r) => r.data }
-    // );
-
     const downloadPdfMutation = useMutation(async () =>
         getPdf(`products/downloadPdf/${id}`, getAuthHeader())
     );
@@ -29,7 +23,7 @@ const PdfDownload = ({ id }: Props) => {
         const url = window.URL.createObjectURL(pdf);
         const link = document.createElement("a");
         link.href = url;
-        link.setAttribute("download", "downloaded.pdf");
+        link.setAttribute("download", "conduflex.pdf");
         document.body.appendChild(link);
         link.click();
 

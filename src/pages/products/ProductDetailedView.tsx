@@ -47,7 +47,11 @@ const ProductDetailedView = () => {
                             flexDir={"row"}
                             width={"80%"}
                         >
-                            <Heading>{i18n.language === "es" ? product.name : product.englishName}</Heading>
+                            <Heading>
+                                {i18n.language === "es"
+                                    ? product.name
+                                    : product.englishName}
+                            </Heading>
                         </Flex>
                         <HStack>
                             <VStack width={"60%"}>
@@ -63,7 +67,9 @@ const ProductDetailedView = () => {
                                 justifyContent={"flex-start"}
                             >
                                 <Text width={"100%"} fontSize={"1.2rem"}>
-                                    {i18n.language === "es" ? product.description : product.englishDescription}
+                                    {i18n.language === "es"
+                                        ? product.description
+                                        : product.englishDescription}
                                 </Text>
                             </VStack>
                         </HStack>
@@ -82,26 +88,25 @@ const ProductDetailedView = () => {
                             mb={2}
                         >
                             <Box>
-                                {i18n.language === "es" ? 
-                                    product.characteristics
-                                        .split("*")
-                                        .map((part) => part.trim())
-                                        .filter((part) => part !== "") 
-                                        .map((filteredPart, index) => (
-                                            <Text key={index}>
-                                                - {filteredPart}
-                                            </Text>
-                                        ))
-                                :   product.englishCharacteristics
-                                        .split("–")
-                                        .map((part) => part.trim())
-                                        .filter((part) => part !== "") 
-                                        .map((filteredPart, index) => (
-                                            <Text key={index}>
-                                                - {filteredPart}
-                                            </Text>
-                                        ))
-                                }
+                                {i18n.language === "es"
+                                    ? product.characteristics
+                                          .split("*")
+                                          .map((part) => part.trim())
+                                          .filter((part) => part !== "")
+                                          .map((filteredPart, index) => (
+                                              <Text key={index}>
+                                                  - {filteredPart}
+                                              </Text>
+                                          ))
+                                    : product.englishCharacteristics
+                                          .split("–")
+                                          .map((part) => part.trim())
+                                          .filter((part) => part !== "")
+                                          .map((filteredPart, index) => (
+                                              <Text key={index}>
+                                                  - {filteredPart}
+                                              </Text>
+                                          ))}
                             </Box>
                         </HStack>
                         {product.characteristicsImages.length > 1 && (
@@ -187,7 +192,9 @@ const ProductDetailedView = () => {
                                 fontSize={"1.5rem"}
                                 width={"80%"}
                             >
-                                {i18n.language === "es" ? product.alternatives : product.englishAlternatives}
+                                {i18n.language === "es"
+                                    ? product.alternatives
+                                    : product.englishAlternatives}
                             </Text>
                         </VStack>
                     </VStack>

@@ -6,11 +6,16 @@ import { useQuery } from "@tanstack/react-query";
 import { useAuthHeader } from "react-auth-kit";
 import { getResource } from "../../api/api";
 import { Home } from "../../api/types";
+import Loading from "../../components/Loading";
 
 const HomeInfo = () => {
     const getAuthHeader = useAuthHeader();
 
-    const { data: home, isSuccess } = useQuery (
+    const {
+        data: home,
+        isSuccess,
+        isLoading,
+    } = useQuery(
         ["home"],
         async () => getResource<Home>("home", getAuthHeader()),
         { select: (r) => r.data }
@@ -18,13 +23,17 @@ const HomeInfo = () => {
 
     return (
         <>
-            {isSuccess &&
+            {isSuccess && (
                 <Box>
                     <Carousel images={home.images} />
-                    <FadingTexts description={home.description} englishDescription={home.englishDescription} />
+                    <FadingTexts
+                        description={home.description}
+                        englishDescription={home.englishDescription}
+                    />
                     <HomeLinks />
                 </Box>
-            }
+            )}
+            {isLoading && <Loading />}
         </>
     );
 };

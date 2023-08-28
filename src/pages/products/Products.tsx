@@ -65,11 +65,15 @@ const Products = () => {
                             p={2}
                         >
                             <Text textAlign={"center"} fontSize={"1.5rem"}>
-                                {i18n.language === "es" ? el.name : el.englishName}
+                                {i18n.language === "es"
+                                    ? el.name
+                                    : el.englishName}
                             </Text>
                             <Hide below="md">
                                 <Text textAlign={"center"}>
-                                    {i18n.language === "es" ? el.description : el.englishDescription}
+                                    {i18n.language === "es"
+                                        ? el.description
+                                        : el.englishDescription}
                                 </Text>
                             </Hide>
                         </VStack>

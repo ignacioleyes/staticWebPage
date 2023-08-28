@@ -14,9 +14,15 @@ const FadingTexts = ({ description, englishDescription }: Props) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setMessage(i18n.language === "es" ? description[currentMessageIndex] : englishDescription[currentMessageIndex]);
-            setCurrentMessageIndex(
-                (prevIndex) => i18n.language === "es" ? (prevIndex + 1) % description.length : (prevIndex + 1) % englishDescription.length
+            setMessage(
+                i18n.language === "es"
+                    ? description[currentMessageIndex]
+                    : englishDescription[currentMessageIndex]
+            );
+            setCurrentMessageIndex((prevIndex) =>
+                i18n.language === "es"
+                    ? (prevIndex + 1) % description.length
+                    : (prevIndex + 1) % englishDescription.length
             );
         }, 3000);
         console.log(timer);
@@ -24,10 +30,16 @@ const FadingTexts = ({ description, englishDescription }: Props) => {
     }, [currentMessageIndex, t, i18n.language, message]);
 
     return (
-        <HStack justifyContent={"center"} height="20rem" width="100%"  mt={5}>
+        <HStack justifyContent={"center"} height="20rem" width="100%" mt={5}>
             <VStack>
                 <Heading
-                    size={{ base:"lg", sm:"lg", md:"lg", lg:"2xl", xl:"3xl" }}
+                    size={{
+                        base: "lg",
+                        sm: "lg",
+                        md: "lg",
+                        lg: "2xl",
+                        xl: "3xl",
+                    }}
                     color={"primary"}
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 0.1)"}
                     p={5}
@@ -37,7 +49,13 @@ const FadingTexts = ({ description, englishDescription }: Props) => {
                 </Heading>
                 <Text
                     color={"secondary"}
-                    fontSize={{ base:"lg", sm:"lg", md:"lg", lg:"2xl", xl:"3xl" }}
+                    fontSize={{
+                        base: "lg",
+                        sm: "lg",
+                        md: "lg",
+                        lg: "2xl",
+                        xl: "3xl",
+                    }}
                     textShadow={"2px 2px 4px rgba(0, 0, 0, 0.4)"}
                     textAlign={"center"}
                 >
