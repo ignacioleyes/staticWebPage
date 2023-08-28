@@ -93,7 +93,7 @@ const ProductDetailedView = () => {
                                             </Text>
                                         ))
                                 :   product.englishCharacteristics
-                                        .split("–")
+                                        .split("*")
                                         .map((part) => part.trim())
                                         .filter((part) => part !== "") 
                                         .map((filteredPart, index) => (
