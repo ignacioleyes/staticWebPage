@@ -2,7 +2,11 @@ import { VStack, Box, Image } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { useEffect, useState } from "react";
 
-const Carousel = () => {
+interface Props {
+    images: string[];
+}
+
+const Carousel = ({ images }: Props) => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const scaleAnimation = keyframes`
@@ -20,16 +24,14 @@ const Carousel = () => {
   }
 `;
 
-    const imageUrls = ["/carousel1.jpg", "/carousel2.jpg", "/carousel3.jpg"];
-
     useEffect(() => {
-        const nextSlide = (currentSlide + 1) % imageUrls.length;
+        const nextSlide = (currentSlide + 1) % images.length;
         const timer = setTimeout(() => {
             setCurrentSlide(nextSlide);
         }, 5000); // Change slide every 5 seconds
 
         return () => clearTimeout(timer);
-    }, [currentSlide, imageUrls.length]);
+    }, [currentSlide, images.length]);
 
     return (
         <VStack>
@@ -39,7 +41,7 @@ const Carousel = () => {
                 overflow="hidden"
                 position="relative"
             >
-                {imageUrls.map((imageUrl, index) => (
+                {images.map((imageUrl, index) => (
                     <Box
                         key={index}
                         width="100%"

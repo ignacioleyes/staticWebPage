@@ -2,27 +2,26 @@ import { VStack, HStack, Text, Heading } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-const FadingTexts = () => {
-    const [t] = useTranslation("global");
+interface Props {
+    description: string[];
+    englishDescription: string[];
+}
+
+const FadingTexts = ({ description, englishDescription }: Props) => {
+    const [t, i18n] = useTranslation("global");
     const [message, setMessage] = useState("");
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
     useEffect(() => {
-        const messages = [
-            t("fadingTexts.fading1"),
-            t("fadingTexts.fading2"),
-            t("fadingTexts.fading3"),
-        ];
-
         const timer = setTimeout(() => {
-            setMessage(messages[currentMessageIndex]);
+            setMessage(i18n.language === "es" ? description[currentMessageIndex] : englishDescription[currentMessageIndex]);
             setCurrentMessageIndex(
-                (prevIndex) => (prevIndex + 1) % messages.length
+                (prevIndex) => i18n.language === "es" ? (prevIndex + 1) % description.length : (prevIndex + 1) % englishDescription.length
             );
         }, 3000);
-
+        console.log(timer);
         return () => clearTimeout(timer);
-    }, [currentMessageIndex, t]);
+    }, [currentMessageIndex, t, i18n.language, message]);
 
     return (
         <HStack justifyContent={"center"} height="20rem" width="100%"  mt={5}>

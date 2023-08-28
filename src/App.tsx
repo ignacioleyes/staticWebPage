@@ -1,12 +1,12 @@
 import { VStack, Box } from "@chakra-ui/react";
 import Navbar from "./components/NavBar/Navbar";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/home/Home";
 import Products from "./pages/products/Products";
 import Contact from "./pages/contact/ContactView";
 import About from "./pages/about/About";
 import Footer from "./components/footer/Footer";
 import ProductDetailedView from "./pages/products/ProductDetailedView";
+import HomeInfo from "./pages/home/HomeInfo";
 
 const App = () => {
     return (
@@ -14,7 +14,7 @@ const App = () => {
             <Navbar />
             <Box w={"full"} flex={1} bgColor={"whitesmoke"}>
                 <Routes>
-                    <Route path={"/"} element={<Home />} />
+                    <Route path={"/"} element={<HomeInfo />} />
                     <Route path={"/about"} element={<About />} />
                     <Route path={"/products"} element={<Products />} />
                     <Route

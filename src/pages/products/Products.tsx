@@ -19,7 +19,7 @@ import PdfDownload from "./PdfDownload";
 
 const Products = () => {
     const getAuthHeader = useAuthHeader();
-    const [t] = useTranslation("global");
+    const [t, i18n] = useTranslation("global");
 
     const {
         data: items,
@@ -65,11 +65,11 @@ const Products = () => {
                             p={2}
                         >
                             <Text textAlign={"center"} fontSize={"1.5rem"}>
-                                {el.name}
+                                {i18n.language === "es" ? el.name : el.englishName}
                             </Text>
                             <Hide below="md">
                                 <Text textAlign={"center"}>
-                                    {el.description}
+                                    {i18n.language === "es" ? el.description : el.englishDescription}
                                 </Text>
                             </Hide>
                         </VStack>

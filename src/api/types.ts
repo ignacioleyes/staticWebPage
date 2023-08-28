@@ -35,6 +35,15 @@ export interface Product {
     englishAlternatives: string;
 }
 
+export interface Home {
+    id: number;
+    images: string[];
+    title: string;
+    englishTitle: string;
+    description: string[];
+    englishDescription: string[];
+}
+
 export enum BrandEnum {
     Test,
 }
