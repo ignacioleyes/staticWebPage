@@ -13,13 +13,16 @@ const FadingTexts = ({ description, englishDescription }: Props) => {
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
     useEffect(() => {
+        setMessage(i18n.language === "es" ? description[currentMessageIndex] : englishDescription[currentMessageIndex]);
+    }, [i18n.language])
+
+    useEffect(() => {
         const timer = setTimeout(() => {
             setMessage(i18n.language === "es" ? description[currentMessageIndex] : englishDescription[currentMessageIndex]);
             setCurrentMessageIndex(
                 (prevIndex) => i18n.language === "es" ? (prevIndex + 1) % description.length : (prevIndex + 1) % englishDescription.length
             );
         }, 3000);
-        console.log(timer);
         return () => clearTimeout(timer);
     }, [currentMessageIndex, t, i18n.language, message]);
 
