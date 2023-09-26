@@ -15,7 +15,7 @@ import Loading from "../../components/Loading";
 import SearchIcon from "../../assets/images/search.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import PdfDownload from "./PdfDownload";
+// import PdfDownload from "./PdfDownload";
 
 const Products = () => {
     const getAuthHeader = useAuthHeader();
@@ -99,7 +99,7 @@ const Products = () => {
                                     </Link>
                                 </Tooltip>
                             </Hide>
-                            <PdfDownload id={el.id} />
+                            {/* <PdfDownload id={el.id} /> */}
                         </HStack>
                     </HStack>
                 ))}

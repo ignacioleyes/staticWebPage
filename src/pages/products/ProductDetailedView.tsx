@@ -10,8 +10,8 @@ import {
     Text,
     Heading,
     Box,
-    Flex,
     Center,
+    Divider,
 } from "@chakra-ui/react";
 import Loading from "../../components/Loading";
 import { useTranslation } from "react-i18next";
@@ -36,80 +36,109 @@ const ProductDetailedView = () => {
             {isSuccess && (
                 <Center>
                     <VStack
-                        width="60%"
-                        borderRadius={"2rem"}
+                        width="80%"
+                        borderRadius={"0.5rem"}
                         bg={"white"}
                         p={1}
                         m={5}
                     >
-                        <Flex
-                            justifyContent={"flex-start"}
-                            flexDir={"row"}
-                            width={"80%"}
-                        >
+                        <HStack justifyContent={"flex-start"} width={"90%"} mt={4}>
                             <Heading>
                                 {i18n.language === "es"
                                     ? product.name
                                     : product.englishName}
                             </Heading>
-                        </Flex>
-                        <HStack>
-                            <VStack width={"60%"}>
-                                <Image
-                                    src={product.productImage}
-                                    width={"90%"}
-                                />
-                            </VStack>
-                            <VStack
-                                pl={3}
-                                pr={3}
-                                width={"40%"}
-                                justifyContent={"flex-start"}
-                            >
-                                <Text width={"100%"} fontSize={"1.2rem"}>
-                                    {i18n.language === "es"
-                                        ? product.description
-                                        : product.englishDescription}
-                                </Text>
-                            </VStack>
                         </HStack>
-                        <Flex
-                            justifyContent={"flex-start"}
-                            flexDir={"row"}
+                        <HStack width={"90%"} justifyContent={"flex-start"} mt={2}>
+                            <Text fontSize={"1.2rem"}>
+                                {i18n.language === "es"
+                                    ? product.description
+                                    : product.englishDescription}
+                            </Text>
+                        </HStack>
+                        <HStack>
+                            <Image src={product.productImage} width={"100%"} />
+                        </HStack>
+                        {product.certificationsImage && (
+                            <HStack width={"90%"} justifyContent={"flex-end"}>
+                                <Image
+                                    w="8%"
+                                    src={product.certificationsImage}
+                                    alt={product.certificationsImage}
+                                    borderRadius={"2rem"}
+                                />
+                            </HStack>
+                        )}
+                        <HStack justifyContent={"flex-start"} width={"90%"}>
+                            <Text fontSize={"1.5rem"} fontWeight={"bold"}>
+                                {t("products.applicationTitle")}
+                            </Text>
+                        </HStack>
+                        <Divider
+                            orientation={"horizontal"}
+                            variant={"solid"}
+                            borderColor={"primary"}
+                            borderWidth={"0.1rem"}
+                            width={"90%"}
+                        />
+                        <HStack width={"90%"} justifyContent={"flex-start"} mt={1} mb={1}>
+                            <Text fontSize={"1.2rem"}>
+                                {i18n.language === "es"
+                                    ? product.application
+                                    : product.englishApplication}
+                            </Text>
+                        </HStack>
+                        <HStack width={"80%"} justifyContent={"flex-start"} mt={2}>
+                            <Text fontSize={"1.5rem"} fontWeight={"bold"}>
+                                {t("products.featuresTitle")}
+                            </Text>
+                        </HStack>
+                        <Divider
+                            orientation={"horizontal"}
+                            variant={"solid"}
+                            borderColor={"primary"}
+                            borderWidth={"0.1rem"}
                             width={"80%"}
-                            mb={2}
-                            mt={2}
-                        >
-                            <Heading>{t("products.featuresTitle")}</Heading>
-                        </Flex>
+                        />
                         <HStack
                             justifyContent={"flex-start"}
                             width={"80%"}
                             mb={2}
                         >
                             <Box>
-                                {i18n.language === "es" ? 
-                                    product.characteristics
-                                        .split("*")
-                                        .map((part) => part.trim())
-                                        .filter((part) => part !== "") 
-                                        .map((filteredPart, index) => (
-                                            <Text key={index}>
-                                                - {filteredPart}
-                                            </Text>
-                                        ))
-                                :   product.englishCharacteristics
-                                        .split("*")
-                                        .map((part) => part.trim())
-                                        .filter((part) => part !== "") 
-                                        .map((filteredPart, index) => (
-                                            <Text key={index}>
-                                                - {filteredPart}
-                                            </Text>
-                                        ))
-                                }
+                                {i18n.language === "es"
+                                    ? product.characteristics
+                                          .split("*")
+                                          .map((part) => part.trim())
+                                          .filter((part) => part !== "")
+                                          .map((filteredPart, index) => (
+                                              <Text key={index}>
+                                                  - {filteredPart}
+                                              </Text>
+                                          ))
+                                    : product.englishCharacteristics
+                                          .split("*")
+                                          .map((part) => part.trim())
+                                          .filter((part) => part !== "")
+                                          .map((filteredPart, index) => (
+                                              <Text key={index}>
+                                                  - {filteredPart}
+                                              </Text>
+                                          ))}
                             </Box>
                         </HStack>
+                        <HStack width={"80%"} justifyContent={"flex-start"} mt={2}>
+                            <Text fontSize={"1.5rem"} fontWeight={"bold"}>
+                                {t("products.codificationTitle")}
+                            </Text>
+                        </HStack>
+                        <Divider
+                            orientation={"horizontal"}
+                            variant={"solid"}
+                            borderColor={"primary"}
+                            borderWidth={"0.1rem"}
+                            width={"80%"}
+                        />
                         {product.characteristicsImages.length > 1 && (
                             <>
                                 <HStack
@@ -143,60 +172,30 @@ const ProductDetailedView = () => {
                                 p={2}
                             >
                                 <Image
-                                    w="50%"
+                                    w="30%"
                                     src={product.characteristicsImages[0]}
                                     alt={product.characteristicsImages[0]}
                                 />
                             </HStack>
                         )}
-                        {product.certificationsImage && (
-                            <>
-                                <Flex
-                                    justifyContent={"flex-start"}
-                                    flexDir={"row"}
-                                    width={"80%"}
-                                    mb={2}
-                                    mt={2}
-                                >
-                                    <Heading>
-                                        {t("products.certifications")}
-                                    </Heading>
-                                </Flex>
-                                <VStack
-                                    width={"100%"}
-                                    justifyContent={"center"}
-                                >
-                                    <Image
-                                        w="20%"
-                                        src={product.certificationsImage}
-                                        alt={product.certificationsImage}
-                                        borderRadius={"2rem"}
-                                    />
-                                </VStack>
-                            </>
-                        )}
                         <VStack width={"100%"} justifyContent={"center"}>
-                            <Flex
-                                justifyContent={"flex-start"}
-                                flexDir={"row"}
+                            <HStack width={"80%"} justifyContent={"flex-start"} mt={2}>
+                                <Text fontSize={"1.5rem"} fontWeight={"bold"}>
+                                    {t("products.table")}
+                                </Text>
+                            </HStack>
+                            <Divider
+                                orientation={"horizontal"}
+                                variant={"solid"}
+                                borderColor={"primary"}
+                                borderWidth={"0.1rem"}
                                 width={"80%"}
-                            >
-                                <Heading>{t("products.table")}</Heading>
-                            </Flex>
+                            />
                             <Image
                                 w="90%"
                                 src={product.tablesImage}
                                 alt={product.tablesImage}
                             />
-                            <Text
-                                textAlign={"center"}
-                                fontSize={"1.5rem"}
-                                width={"80%"}
-                            >
-                                {i18n.language === "es"
-                                    ? product.alternatives
-                                    : product.englishAlternatives}
-                            </Text>
                         </VStack>
                     </VStack>
                 </Center>

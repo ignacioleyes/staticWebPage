@@ -56,8 +56,10 @@
     "products": {
         "tooltipSpecs": "See Specs",
         "tooltipPdf": "Download",
+        "applicationTitle": "Application",
         "featuresTitle": "Features",
+        "codificationTitle": "Codification",
         "certifications": "Certifications",
-        "table": "Table"
+        "table": "Dimensions Table"
     }
 }

@@ -56,8 +56,10 @@
     "products": {
         "tooltipSpecs": "Ver Ficha",
         "tooltipPdf": "Descargar",
+        "applicationTitle": "Aplicación",
         "featuresTitle": "Características",
+        "codificationTitle": "Codificación",
         "certifications": "Certificaciones",
-        "table": "Tabla"
+        "table": "Tabla de dimensiones"
     }
 }
