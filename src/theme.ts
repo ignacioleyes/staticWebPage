@@ -4,8 +4,8 @@ import { extendTheme } from "@chakra-ui/react";
 // Define the @font-face declaration
 const fontStyles = `
   @fontFace {
-    font-family: 'Objet-Regular';
-    src: url('./Objet-Regular.ttf') format('truetype');
+    font-family: 'Saira-Regular';
+    src: url('./Saira-Regular.ttf') format('truetype');
   }
 `;
 
@@ -24,7 +24,7 @@ export const theme = extendTheme({
       black: "#000000",
     },
     fonts: {
-        heading: "'Objet-Regular', sans-serif",
-        body: "'Objet-Regular', sans-serif",
+        heading: "'Saira-Regular', sans-serif",
+        body: "'Saira-Regular', sans-serif",
     },
 });

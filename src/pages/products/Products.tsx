@@ -52,7 +52,7 @@ const Products = () => {
                     >
                         <VStack width={"30%"} justifyContent={"center"}>
                             <Image
-                                w="100%"
+                                w="90%"
                                 src={el.productImage}
                                 alt={el.productImage}
                                 borderRadius={"2rem"}
