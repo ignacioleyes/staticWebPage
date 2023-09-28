@@ -23,7 +23,7 @@ export interface Product {
     englishName: string;
     description: string;
     englishDescription: string;
-    brand: BrandEnum;
+    brand: string;
     characteristics: string;
     englishCharacteristics: string;
     price: number;
@@ -44,6 +44,3 @@ export interface Home {
     englishDescription: string[];
 }
 
-export enum BrandEnum {
-    Test,
-}

@@ -59,6 +59,13 @@ const ProductDetailedView = () => {
                         <HStack>
                             <Image src={product.productImage} width={"100%"} />
                         </HStack>
+                        <HStack width={"90%"} justifyContent={"flex-start"} mt={2}>
+                            <Text fontSize={"1.1rem"} fontStyle={"italic"}>
+                            {t("products.marking")}: {i18n.language === "es"
+                                    ? product.brand
+                                    : product.brand}
+                            </Text>
+                        </HStack>
                         {product.certificationsImage && (
                             <HStack width={"90%"} justifyContent={"flex-end"}>
                                 <Image
@@ -97,7 +104,7 @@ const ProductDetailedView = () => {
                             orientation={"horizontal"}
                             variant={"solid"}
                             borderColor={"primary"}
-                            borderWidth={"0.1rem"}
+                            borderWidth={"0,1rem"}
                             width={"80%"}
                         />
                         <HStack
@@ -136,7 +143,7 @@ const ProductDetailedView = () => {
                             orientation={"horizontal"}
                             variant={"solid"}
                             borderColor={"primary"}
-                            borderWidth={"0.1rem"}
+                            borderWidth={"0,1rem"}
                             width={"80%"}
                         />
                         {product.characteristicsImages.length > 1 && (
@@ -172,7 +179,7 @@ const ProductDetailedView = () => {
                                 p={2}
                             >
                                 <Image
-                                    w="30%"
+                                    w="50%"
                                     src={product.characteristicsImages[0]}
                                     alt={product.characteristicsImages[0]}
                                 />
@@ -188,11 +195,11 @@ const ProductDetailedView = () => {
                                 orientation={"horizontal"}
                                 variant={"solid"}
                                 borderColor={"primary"}
-                                borderWidth={"0.1rem"}
+                                borderWidth={"0,8px"}
                                 width={"80%"}
                             />
                             <Image
-                                w="90%"
+                                w="80%"
                                 src={product.tablesImage}
                                 alt={product.tablesImage}
                             />
