@@ -8,7 +8,6 @@ import {
     VStack,
     Image,
     Text,
-    Heading,
     Box,
     Center,
     Divider,
@@ -42,15 +41,39 @@ const ProductDetailedView = () => {
                         p={1}
                         m={5}
                     >
-                        <HStack justifyContent={"flex-start"} width={"90%"} mt={4}>
-                            <Heading>
+                        <HStack
+                            justifyContent={"flex-start"}
+                            width={"90%"}
+                            mt={4}
+                        >
+                            <Text
+                                fontSize={{
+                                    base: "1rem",
+                                    sm: "1rem",
+                                    md: "1.2rem",
+                                    lg: "1.5rem",
+                                    xl: "2rem",
+                                }}
+                            >
                                 {i18n.language === "es"
                                     ? product.name
                                     : product.englishName}
-                            </Heading>
+                            </Text>
                         </HStack>
-                        <HStack width={"90%"} justifyContent={"flex-start"} mt={2}>
-                            <Text fontSize={"1.2rem"}>
+                        <HStack
+                            width={"90%"}
+                            justifyContent={"flex-start"}
+                            mt={2}
+                        >
+                            <Text
+                                fontSize={{
+                                    base: "0.8rem",
+                                    sm: "0.8rem",
+                                    md: "1rem",
+                                    lg: "1rem",
+                                    xl: "1.2rem",
+                                }}
+                            >
                                 {i18n.language === "es"
                                     ? product.description
                                     : product.englishDescription}
@@ -59,9 +82,23 @@ const ProductDetailedView = () => {
                         <HStack>
                             <Image src={product.productImage} width={"100%"} />
                         </HStack>
-                        <HStack width={"90%"} justifyContent={"flex-start"} mt={2}>
-                            <Text fontSize={"1.1rem"} fontStyle={"italic"}>
-                            {t("products.marking")}: {i18n.language === "es"
+                        <HStack
+                            width={"90%"}
+                            justifyContent={"flex-start"}
+                            mt={2}
+                        >
+                            <Text
+                                fontSize={{
+                                    base: "0.8rem",
+                                    sm: "0.8rem",
+                                    md: "1rem",
+                                    lg: "1rem",
+                                    xl: "1.1rem",
+                                }}
+                                fontStyle={"italic"}
+                            >
+                                {t("products.marking")}:{" "}
+                                {i18n.language === "es"
                                     ? product.brand
                                     : product.brand}
                             </Text>
@@ -77,7 +114,16 @@ const ProductDetailedView = () => {
                             </HStack>
                         )}
                         <HStack justifyContent={"flex-start"} width={"90%"}>
-                            <Text fontSize={"1.5rem"} fontWeight={"bold"}>
+                            <Text
+                                fontSize={{
+                                    base: "1rem",
+                                    sm: "1rem",
+                                    md: "1.2rem",
+                                    lg: "1.5rem",
+                                    xl: "2rem",
+                                }}
+                                fontWeight={"bold"}
+                            >
                                 {t("products.applicationTitle")}
                             </Text>
                         </HStack>
@@ -88,15 +134,41 @@ const ProductDetailedView = () => {
                             borderWidth={"0.1rem"}
                             width={"90%"}
                         />
-                        <HStack width={"90%"} justifyContent={"flex-start"} mt={1} mb={1}>
-                            <Text fontSize={"1.2rem"}>
+                        <HStack
+                            width={"90%"}
+                            justifyContent={"flex-start"}
+                            mt={1}
+                            mb={1}
+                        >
+                            <Text
+                                fontSize={{
+                                    base: "0.8rem",
+                                    sm: "0.8rem",
+                                    md: "1rem",
+                                    lg: "1rem",
+                                    xl: "1.2rem",
+                                }}
+                            >
                                 {i18n.language === "es"
                                     ? product.application
                                     : product.englishApplication}
                             </Text>
                         </HStack>
-                        <HStack width={"80%"} justifyContent={"flex-start"} mt={2}>
-                            <Text fontSize={"1.5rem"} fontWeight={"bold"}>
+                        <HStack
+                            width={"80%"}
+                            justifyContent={"flex-start"}
+                            mt={2}
+                        >
+                            <Text
+                                fontSize={{
+                                    base: "1rem",
+                                    sm: "1rem",
+                                    md: "1.2rem",
+                                    lg: "1.5rem",
+                                    xl: "2rem",
+                                }}
+                                fontWeight={"bold"}
+                            >
                                 {t("products.featuresTitle")}
                             </Text>
                         </HStack>
@@ -119,7 +191,16 @@ const ProductDetailedView = () => {
                                           .map((part) => part.trim())
                                           .filter((part) => part !== "")
                                           .map((filteredPart, index) => (
-                                              <Text key={index}>
+                                              <Text
+                                                  fontSize={{
+                                                      base: "0.8rem",
+                                                      sm: "0.8rem",
+                                                      md: "1rem",
+                                                      lg: "1rem",
+                                                      xl: "1.2rem",
+                                                  }}
+                                                  key={index}
+                                              >
                                                   - {filteredPart}
                                               </Text>
                                           ))
@@ -128,14 +209,36 @@ const ProductDetailedView = () => {
                                           .map((part) => part.trim())
                                           .filter((part) => part !== "")
                                           .map((filteredPart, index) => (
-                                              <Text key={index}>
+                                              <Text
+                                                  fontSize={{
+                                                      base: "0.8rem",
+                                                      sm: "0.8rem",
+                                                      md: "1rem",
+                                                      lg: "1rem",
+                                                      xl: "1.2rem",
+                                                  }}
+                                                  key={index}
+                                              >
                                                   - {filteredPart}
                                               </Text>
                                           ))}
                             </Box>
                         </HStack>
-                        <HStack width={"80%"} justifyContent={"flex-start"} mt={2}>
-                            <Text fontSize={"1.5rem"} fontWeight={"bold"}>
+                        <HStack
+                            width={"80%"}
+                            justifyContent={"flex-start"}
+                            mt={2}
+                        >
+                            <Text
+                                fontSize={{
+                                    base: "1rem",
+                                    sm: "1rem",
+                                    md: "1.2rem",
+                                    lg: "1.5rem",
+                                    xl: "2rem",
+                                }}
+                                fontWeight={"bold"}
+                            >
                                 {t("products.codificationTitle")}
                             </Text>
                         </HStack>
@@ -186,8 +289,21 @@ const ProductDetailedView = () => {
                             </HStack>
                         )}
                         <VStack width={"100%"} justifyContent={"center"}>
-                            <HStack width={"80%"} justifyContent={"flex-start"} mt={2}>
-                                <Text fontSize={"1.5rem"} fontWeight={"bold"}>
+                            <HStack
+                                width={"80%"}
+                                justifyContent={"flex-start"}
+                                mt={2}
+                            >
+                                <Text
+                                    fontSize={{
+                                        base: "1rem",
+                                        sm: "1rem",
+                                        md: "1.2rem",
+                                        lg: "1.5rem",
+                                        xl: "2rem",
+                                    }}
+                                    fontWeight={"bold"}
+                                >
                                     {t("products.table")}
                                 </Text>
                             </HStack>

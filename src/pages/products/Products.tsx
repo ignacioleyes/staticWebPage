@@ -64,7 +64,16 @@ const Products = () => {
                             justifyContent={"flex-start"}
                             p={2}
                         >
-                            <Text textAlign={"center"} fontSize={"1.5rem"}>
+                            <Text
+                                textAlign={"center"}
+                                fontSize={{
+                                    base: "0.5rem",
+                                    sm: "0.7rem",
+                                    md: "1rem",
+                                    lg: "1rem",
+                                    xl: "1.5rem",
+                                }}
+                            >
                                 {i18n.language === "es"
                                     ? el.name
                                     : el.englishName}
@@ -82,23 +91,29 @@ const Products = () => {
                             justifyContent={"center"}
                             spacing={8}
                         >
-                            <Hide below="md">
-                                <Tooltip
-                                    hasArrow
-                                    label={t("products.tooltipSpecs")}
-                                    bg={"primary"}
-                                    color={"secondary"}
-                                >
-                                    <Link to={`/products/${el.id}`}>
-                                        <Image
-                                            width={"2.5rem"}
-                                            src={SearchIcon}
-                                            cursor={"pointer"}
-                                            _hover={{ transform: "scale(1.1)" }}
-                                        ></Image>
-                                    </Link>
-                                </Tooltip>
-                            </Hide>
+                            {/* <Hide below="md"> */}
+                            <Tooltip
+                                hasArrow
+                                label={t("products.tooltipSpecs")}
+                                bg={"primary"}
+                                color={"secondary"}
+                            >
+                                <Link to={`/products/${el.id}`}>
+                                    <Image
+                                        width={{
+                                            base: "0.8rem",
+                                            sm: "0.7rem",
+                                            md: "2rem",
+                                            lg: "2rem",
+                                            xl: "2.5rem",
+                                        }}
+                                        src={SearchIcon}
+                                        cursor={"pointer"}
+                                        _hover={{ transform: "scale(1.1)" }}
+                                    ></Image>
+                                </Link>
+                            </Tooltip>
+                            {/* </Hide> */}
                             {/* <PdfDownload id={el.id} /> */}
                         </HStack>
                     </HStack>
