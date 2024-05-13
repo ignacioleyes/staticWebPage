@@ -23,8 +23,8 @@ const ContactView = () => {
     return (
         <Box position={"relative"}>
             <Banner />
-            <MapAndCards contactInfo={contactInfo} />
             <ContactForm />
+            <MapAndCards contactInfo={contactInfo} />
         </Box>
     );
 };

@@ -78,7 +78,7 @@ const ContactForm = () => {
     );
 
     return (
-        <VStack height={"auto"} spacing={0} mb={5}>
+        <VStack height={"auto"} spacing={0} mb={5} mt={5}>
             <HStack
                 width={"75%"}
                 height={"auto"}
