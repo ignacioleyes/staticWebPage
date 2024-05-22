@@ -7,22 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Conduflex</title>
         <!-- Google tag (gtag.js) -->
-        <script>
-            window.addEventListener('DOMContentLoaded', () => {
-                const script = document.createElement('script');
-                script.async = true;
-                script.src = import.meta.env.VITE_GOOGLE_TAG_MANAGER_SOURCE;
-                document.head.appendChild(script);
+        <script type="module">
+            import { loadGoogleTagManager } from "./googleTagManager.js";
+            window.addEventListener("DOMContentLoaded", () => {
+                loadGoogleTagManager(
+                    import.meta.env.VITE_GOOGLE_TAG_MANAGER_ID
+                );
             });
-        </script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-
-            gtag("config", import.meta.env.VITE_GOOGLE_TAG_MANAGER_ID);
         </script>
     </head>
     <body>
