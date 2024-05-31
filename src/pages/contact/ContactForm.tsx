@@ -39,7 +39,7 @@ const ContactForm = () => {
         email: Yup.string()
             .required(t("contactForm.emailError"))
             .email(t("contactForm.emailErrorFormat")),
-        company: Yup.string().nullable(),
+        company: Yup.string().required(t("contactForm.companyError")),
         message: Yup.string().required(t("contactForm.messageError")),
     });
 
@@ -54,7 +54,7 @@ const ContactForm = () => {
 
     const onSuccess = () => {
         toast({
-            title: "Message Sent",
+            title: t("contactForm.toastMessage"),
             status: "success",
             isClosable: true,
         });
@@ -128,6 +128,7 @@ const ContactForm = () => {
                                 placeholder={t(
                                     "contactForm.companyPlaceholder"
                                 )}
+                                isRequired={true}
                                 value={formik.values.company}
                                 onChange={formik.handleChange}
                                 error={formik.errors.company}

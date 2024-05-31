@@ -51,7 +51,9 @@
         "messageLabel": "Mensaje",
         "messagePlaceholder": "Escribí un mensaje...",
         "messageError": "El mensaje es requerido",
-        "button": "Enviar"
+        "companyError": "La empresa es requerida",
+        "button": "Enviar",
+        "toastMessage": "Enviado con éxito"
     },
     "products": {
         "tooltipSpecs": "Ver Ficha",
