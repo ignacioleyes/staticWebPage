@@ -8,10 +8,10 @@
         <title>Conduflex</title>
         <script type="module" src="./gtm.js"></script>
         <script type="module">
-            import { loadGoogleTagManager } from "./googleTagManager.js";
+            import { loadAnalytics } from "./analytics.js";
             window.addEventListener("DOMContentLoaded", () => {
-                loadGoogleTagManager(
-                    import.meta.env.VITE_CD_TAG_MANAGER_ID
+                loadAnalytics(
+                    import.meta.env.VITE_ANALYTICS_ID
                 );
             });
         </script>
